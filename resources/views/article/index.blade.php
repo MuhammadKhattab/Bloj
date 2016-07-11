@@ -22,11 +22,15 @@
       <div class = "row">
         <div class="col-md-12">
             <article>
-            <a href = {{ url('article', $article->id)}}>  {{$article->title}} </a>
-          </article>
+              <a href = {{ url('article', $article->id)}}>  {{$article->title}} </a>
+            </article>
         </div>
       </div>
-      <hr>
+
+    @include('article.tags',compact('article'))
+
+    <hr>
+
     @endforeach
 
 </div>

@@ -19,30 +19,25 @@
 
   </div>
 
+  <hr>
+
   <div class = "row">
     <div class = "col-md-12">
-      <h2> {{ $article->title }}</h2>
+      <article> {{ $article->title }}</article>
     </div>
   </div>
+
+  <hr>
 
   <div class = "row">
-    <article class = "col-md-12">
+    <p class = "col-md-12">
       {{ $article -> body }}
-    </article>
+    </p>
   </div>
 
-    @unless($article->tags->isEmpty())
-    <div class = "row">
-      <h5 class = "col-md-12">Tags</h5>
-    </div>
-    <div class = "row">
-      <ul>
-        @foreach($article->tags as $tag)
-          <li class = "col-md-2">{{ $tag->name }}</li>
-        @endforeach
-      </ul>
-    </div>
-  @endunless
+  <hr>
+
+  @include('article.tags',compact('article'))
 
 </div>
 @endsection
