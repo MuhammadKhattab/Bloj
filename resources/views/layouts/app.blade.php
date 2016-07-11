@@ -13,7 +13,7 @@
 
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="css/hellow.css">
+    <link rel="stylesheet" type="text/css" href= {{ url("css/hellow.css")}}>
 
 </head>
 <body id="app-layout">
@@ -43,7 +43,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                       Wandern <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="{{ url('/articles') }}">Articles</a></li>
+                      <li><a href="{{ url('/article') }}">Explore articles</a></li>
+                      @if(Auth::user())
+                        <li><a href="{{ url('article/create') }}">Create an article</a></li>
+                      @endif
                       <li role="separator" class="divider"></li>
                       <li><a href="{{ url('/about') }}">About</a></li>
                       <li><a href="{{ url('/contact') }}">Contact us</a></li>
@@ -69,8 +72,9 @@
             </div>
         </div>
     </nav>
-
-    @include('flash::message')
+    <div class = "container">
+      @include('flash::message')
+    </div>
 
     @yield('content')
 

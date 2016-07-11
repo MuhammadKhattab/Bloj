@@ -14,21 +14,21 @@ class ArticlesController extends Controller
 {
 
     public function __construct() {
-      $this->middleware('auth',['only'=>'create']);
+      $this->middleware('auth',['only'=>['create', 'edit', 'destroy', 'store', 'update']]);
     }
 
     public function index() {
       $articles = Article::latest('published_at')->get();
-      return view('articles.index', compact('articles'));
+      return view('article.index', compact('articles'));
     }
 
     public function show($id) {
       $article = Article::findOrFail($id);
-      return view('articles.show', compact('article'));
+      return view('article.show', compact('article'));
     }
 
     public function create() {
-      return view('articles.create');
+      return view('article.create');
     }
 
     public function store(ArticleRequest $request) {
@@ -38,20 +38,34 @@ class ArticlesController extends Controller
       $article = new Article($input);
       Auth::user()->articles()->save($article);
 
-      flash()->success('Your Article has been created successfully! How kool!');
+      flash()->warning('Your Article has been created successfully! How kool!');
 
-      return redirect('articles');
+      return redirect('article');
     }
 
     public function edit($id) {
       $article = Article::findOrFail($id);
-      return view('articles.edit', compact('article'));
+      return view('article.edit', compact('article'));
     }
 
     public function update($id, ArticleRequest $request) {
       $article = Article::findOrFail($id);
-      $article->update($request::all());
-      return redirect('articles');
+      $article->update($request->all());
+
+      flash()->info('Your Article has been edited successfully!');
+
+      return redirect('article');
+    }
+
+    public function destroy($id)
+    {
+        $article = Article::findOrFail($id);
+
+        $article->delete();
+
+        flash()->success('Your Article has been deleted successfully! Party Hard!');
+
+        return redirect('article');
     }
 
 }

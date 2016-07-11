@@ -1,12 +1,22 @@
 body {
     font-family: 'Lato';
     background-color: rgb(255, 230, 230);
-    background-color: rgb(255, 230, 230);
 }
 
 .fa-btn {
     margin-right: 6px;
 }
+
+.fa {
+  margin-right: 4px;
+}
+
+  /*form*/
+ hr {
+   border: 0;
+   height: 1px;
+   background-image: linear-gradient(to right, rgba(102, 0, 102, 0), rgba(102, 0, 102, 0.75), rgba(102, 0, 102, 0));
+ }
 
 /*welcome*/
 #welcome-comp {
