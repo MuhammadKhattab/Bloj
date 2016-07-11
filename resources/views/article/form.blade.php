@@ -20,10 +20,10 @@
 
   <div class="form-group">
     <div class = "col-md-1 control-label">
-      {!! Form::label('tags','Tags:') !!}
+      {!! Form::label('tag_list','Tags:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::select('tags',['default'], null, ['class' => 'form-control', 'multiple']) !!}
+      {!! Form::select('tag_list[]', $tags, null, ['id'=>'tag_list', 'class' => 'form-control', 'multiple']) !!}
     </div>
   </div>
 
@@ -32,5 +32,12 @@
         {!! Form::submit($submitButtonText,['class' => 'btn-danger form-control']) !!}
     </div>
   </div>
+
+  <script type="text/javascript">
+    $('select').select2( {
+      placeholder: "Choose a tag",
+      tags:true
+    });
+  </script>
 
 </div>

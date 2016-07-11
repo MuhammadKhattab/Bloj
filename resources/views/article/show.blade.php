@@ -31,5 +31,18 @@
     </article>
   </div>
 
+    @unless($article->tags->isEmpty())
+    <div class = "row">
+      <h5 class = "col-md-12">Tags</h5>
+    </div>
+    <div class = "row">
+      <ul>
+        @foreach($article->tags as $tag)
+          <li class = "col-md-2">{{ $tag->name }}</li>
+        @endforeach
+      </ul>
+    </div>
+  @endunless
+
 </div>
 @endsection

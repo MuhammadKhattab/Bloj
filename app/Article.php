@@ -13,7 +13,11 @@ class Article extends Model
   }
 
   public function tags() {
-    return $this->belongsToMany('App\Tag')->withTimestapms();
+    return $this->belongsToMany('App\Tag');
+  }
+
+  public function getTagListAttribute() {
+    return $this->tags->lists('id');
   }
 
 }

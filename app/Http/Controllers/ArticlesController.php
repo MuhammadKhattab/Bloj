@@ -8,6 +8,8 @@ use Carbon\Carbon;
 
 use App\Article;
 
+use App\Tag;
+
 use Auth;
 
 class ArticlesController extends Controller
@@ -24,19 +26,23 @@ class ArticlesController extends Controller
 
     public function show($id) {
       $article = Article::findOrFail($id);
+
       return view('article.show', compact('article'));
     }
 
     public function create() {
-      return view('article.create');
+      $tags = Tag::lists('name', 'id');
+
+      return view('article.create', compact('tags'));
     }
 
     public function store(ArticleRequest $request) {
       $input = $request->all();
       $input['published_at'] = Carbon::now();
 
-      $article = new Article($input);
-      Auth::user()->articles()->save($article);
+      $article = Auth::user()->articles()->create($input);
+
+      $article->tags()->attach($request->input('tag_list'));
 
       flash()->warning('Your Article has been created successfully! How kool!');
 
@@ -45,12 +51,17 @@ class ArticlesController extends Controller
 
     public function edit($id) {
       $article = Article::findOrFail($id);
-      return view('article.edit', compact('article'));
+
+      $tags = Tag::lists('name', 'id');
+
+      return view('article.edit', compact('article', 'tags'));
     }
 
     public function update($id, ArticleRequest $request) {
       $article = Article::findOrFail($id);
       $article->update($request->all());
+
+      $article->tags()->sync($request->input('tag_list'));
 
       flash()->info('Your Article has been edited successfully!');
 
