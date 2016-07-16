@@ -7,7 +7,7 @@
 
     <hr>
 
-    {!! Form::open(['url' => 'article']) !!}
+    {!! Form::open(['url' => 'article', 'id'=>'thaForm']) !!}
 
     @include('article.form',['submitButtonText' => 'Add Article'])
 

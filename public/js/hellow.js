@@ -2,26 +2,42 @@ $(document).ready( function() {
   // flash message
   $('div.alert').not('.alert-important').delay(3000).slideUp(300);
 
-  // contact view
+  // contact animation
   $('.anim-text').animate({marginLeft: "20px"}, 1500);
 
-  // tags
+  // tags in form
   $('select').select2( {
     placeholder: "Choose a tag",
     tags:true
   });
 
-  // drag and drop
+  // drag and drop in about
   $( function() {
     $( "#draggable" ).draggable();
-    
-    $( "#droppable" ).droppable({
+
+    $( "#droppable-explore" ).droppable({
       drop: function( event, ui ) {
         $( this )
           .addClass( "ui-state-highlight" )
-          .find( "p" )
-            .html( "Dropped!" );
+
+        window.location.href = "http://localhost:8000/article";
+
       }
     });
   } );
+
+  // submit in form
+  $( function() {
+    $( "#draggable" ).draggable();
+
+    $( "#droppable-submit" ).droppable({
+      drop: function( event, ui ) {
+        $( this )
+          .addClass( "ui-state-highlight" )
+
+        document.getElementById("thaForm").submit();
+      }
+    });
+  } );
+
 });

@@ -8,5 +8,6 @@
     <h4 class = "anim-text">
       <a href="mailto:msskmohammed96@gmail.com?subject=The Hellow Bloj">E-mail</a>
     </h4>
+
   </div>
 @endsection

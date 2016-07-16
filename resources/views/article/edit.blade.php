@@ -6,8 +6,8 @@
     <h2>Edit: {!! $article->title !!}</h2>
 
     <hr>
-    
-    {!! Form::model($article, ['method' => 'PATCH', 'action' =>['ArticlesController@update', $article->id]]) !!}
+
+    {!! Form::model($article, ['method' => 'PATCH', 'action' =>['ArticlesController@update', $article->id], 'id' =>'thaForm']) !!}
 
       @include('article.form', ['submitButtonText' => 'Update Article'])
 
