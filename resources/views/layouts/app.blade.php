@@ -8,14 +8,14 @@
     <title>Hellow</title>
 
     <!-- Fonts -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet' type='text/css'>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css" rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700" rel='stylesheet'>
 
     <!-- Styles -->
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href= {{ url("css/hellow.css")}}>
+    <link href={{ url("css/libs/bootstrap.min.css")}} rel="stylesheet">
+    <link href={{ url("css/libs/select2.min.css")}} rel="stylesheet" />
+    <link href={{ url("css/libs/jquery-ui.css")}} rel="stylesheet">
+    <link href={{ url("css/hellow.css")}} rel="stylesheet">
 
 </head>
 <body id="app-layout">

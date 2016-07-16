@@ -103,8 +103,6 @@ article {
   border-color: #e16558;
   }
 .navbar-default .navbar-brand {
-  position: absolute;
-  top:-5px;
   color: #ecf0f1;
 }
 .navbar-default .navbar-brand:hover,
