@@ -17,6 +17,9 @@
     <link href={{ url("css/libs/jquery-ui.css")}} rel="stylesheet">
     <link href={{ url("css/hellow.css")}} rel="stylesheet">
 
+    <!-- shortcut icon -->
+    <link rel="shortcut icon" href="{{ url('img/title.png') }}">
+
 </head>
 <body id="app-layout">
     <nav class="navbar navbar-default navbar-static-top">
