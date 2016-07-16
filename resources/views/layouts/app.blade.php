@@ -14,6 +14,7 @@
     <!-- Styles -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
     <link rel="stylesheet" type="text/css" href= {{ url("css/hellow.css")}}>
 
 </head>
@@ -32,7 +33,7 @@
 
                 <!-- Branding Image -->
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    <img src={{ url("images/logo.png")}} alt="logo">
+                    <img src={{ url("img/logo.png")}} alt="logo">
                 </a>
             </div>
 
@@ -81,20 +82,11 @@
 
     <!-- JavaScripts -->
     <!-- <script src = {{ url('js/all.js')}}></script> -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.3/js/select2.min.js"></script>
-
-    <script>
-
-      $(document).ready( function() {
-        $('div.alert').not('.alert-important').delay(3000).slideUp(300);
-
-        $('.anim-text').animate({marginLeft: "20px"}, 1500);
-
-      });
-
-    </script>
+    <script src={{ url("js/libs/jquery.min.js")}}></script>
+    <script src={{ url("js/libs/bootstrap.min.js")}}></script>
+    <script src={{ url("js/libs/select2.min.js")}}></script>
+    <script src={{ url("js/libs/jquery-ui.js")}}></script>
+    <script src={{ url("js/hellow.js")}}></script>
 
 </body>
 </html>

@@ -33,11 +33,20 @@
     </div>
   </div>
 
-  <script type="text/javascript">
-    $('select').select2( {
-      placeholder: "Choose a tag",
-      tags:true
-    });
-  </script>
+  <div class = "row">
+
+    <div class = "col-md-3">
+      <div id="draggable" class="ui-widget-content">
+        <p>Drop me there!</p>
+      </div>
+    </div>
+
+    <div class = "col-md-3">
+      <div id="droppable" class="ui-widget-header">
+        <p>There</p>
+      </div>
+    </div>
+
+  </div>
 
 </div>

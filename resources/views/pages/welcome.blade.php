@@ -1,12 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<img id = "welcome-img" src="images/leaves.jpg" alt="leaves">
+<img id = "welcome-img" src="img/leaves.jpg" alt="leaves">
 
 <div class="container">
 
     <div class="row">
-      <img src="images/hellow.png" alt = "Hellow" id = "welcome-logo">
+      <img src="img/hellow.png" alt = "Hellow" id = "welcome-logo">
     </div>
 
 <div id = "welcome-comp">

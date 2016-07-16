@@ -18,10 +18,19 @@ body {
    background-image: linear-gradient(to right, rgba(102, 0, 102, 0), rgba(102, 0, 102, 0.75), rgba(102, 0, 102, 0));
  }
 
+ #draggable {
+   z-index: 10;
+    width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0;
+   }
+ #droppable {
+   z-index: 9;
+    width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px;
+  }
+
 /*welcome*/
 #welcome-comp {
   position: absolute;
-  left: 40%;
+  left: 38%;
   top: 60%;
   text-align: center;
 }
@@ -94,6 +103,8 @@ article {
   border-color: #e16558;
   }
 .navbar-default .navbar-brand {
+  position: absolute;
+  top:-5px;
   color: #ecf0f1;
 }
 .navbar-default .navbar-brand:hover,
