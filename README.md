@@ -1,4 +1,4 @@
 # Bloj
-Learning web development
 My first Laravel app
+- Blog system
 
