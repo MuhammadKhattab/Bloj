@@ -26,7 +26,6 @@ class ArticlesController extends Controller
 
     public function show($id) {
       $article = Article::findOrFail($id);
-
       return view('article.show', compact('article'));
     }
 
@@ -51,37 +50,42 @@ class ArticlesController extends Controller
 
     public function edit($id) {
       $article = Article::findOrFail($id);
+      if($article->user_id === Auth::user()->id) {
+        $tags = Tag::lists('name', 'id');
 
-      $tags = Tag::lists('name', 'id');
-
-      return view('article.edit', compact('article', 'tags'));
+        return view('article.edit', compact('article', 'tags'));
+      }
+      return view('errors.404');
     }
 
     public function update($id, ArticleRequest $request) {
       $article = Article::findOrFail($id);
-      $article->update($request->all());
+      if($article->user_id === Auth::user()->id) {
+        $article->update($request->all());
 
-      if($request->input('tag_list') != null) {
-        $article->tags()->sync($request->input('tag_list'));
+        if($request->input('tag_list') != null) {
+          $article->tags()->sync($request->input('tag_list'));
+        }
+        else {
+          $article->tags()->sync([]);
+        }
+
+        flash()->info('Your Article has been edited successfully!');
       }
-      else {
-        $article->tags()->sync([]);
-      }
-
-      flash()->info('Your Article has been edited successfully!');
-
-      return redirect('article');
+        return redirect('article');
     }
 
     public function destroy($id)
     {
         $article = Article::findOrFail($id);
+        if($article->user_id === Auth::user()->id) {
+          $article->delete();
 
-        $article->delete();
+          flash()->success('Your Article has been deleted successfully! Party Hard!');
 
-        flash()->success('Your Article has been deleted successfully! Party Hard!');
-
-        return redirect('article');
-    }
+          return redirect('article');
+        }
+      return view('errors.404');
+      }
 
 }

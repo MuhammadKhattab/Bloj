@@ -11,6 +11,21 @@ body {
   margin-right: 4px;
 }
 
+/*tags*/
+.well {
+  border: solid;
+  border-width: 1px;
+  margin-right: 2px;
+  border-color: #660066;
+  color: #1e3044;
+  background-color: #f2dede;
+  text-align: center;
+}
+
+.btn {
+  margin-bottom: 15px;
+}
+
   /*form*/
  hr {
    border: 0;
