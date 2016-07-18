@@ -17,11 +17,7 @@ $(document).ready( function() {
 
     $( "#droppable-explore" ).droppable({
       drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-
         window.location.href = "http://localhost:8000/article";
-
       }
     });
   } );
@@ -32,9 +28,6 @@ $(document).ready( function() {
 
     $( "#droppable-submit" ).droppable({
       drop: function( event, ui ) {
-        $( this )
-          .addClass( "ui-state-highlight" )
-
         document.getElementById("thaForm").submit();
       }
     });
