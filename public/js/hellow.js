@@ -6,7 +6,7 @@ $(document).ready( function() {
   $('.anim-text').animate({marginLeft: "20px"}, 1500);
 
   // tags in form
-  $('select').select2( {
+  $('#tag_list').select2( {
     placeholder: "Choose a tag",
     tags:true
   });

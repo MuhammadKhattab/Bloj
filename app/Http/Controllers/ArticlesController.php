@@ -61,13 +61,13 @@ class ArticlesController extends Controller
       $article = Article::findOrFail($id);
       $article->update($request->all());
 
-      if($request->input('tag_list[]') != null) {
-        $article->tags()->sync($request->input('tag_list[]'));
+      if($request->input('tag_list') != null) {
+        $article->tags()->sync($request->input('tag_list'));
       }
       else {
         $article->tags()->sync([]);
       }
-      
+
       flash()->info('Your Article has been edited successfully!');
 
       return redirect('article');

@@ -4,6 +4,26 @@
 <div class = "container">
 
   <div class = "row">
+    <div class = "col-md-12">
+      <h3> {{ $article->title }}</h3>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class = "row">
+    <p class = "col-md-12">
+      {{ $article -> body }}
+    </p>
+  </div>
+
+  <hr>
+
+  @include('article.tags',compact('article'))
+
+  <hr>
+
+  <div class = "row">
 
     <div class = "col-md-1">
       <a href="{{ route('article.edit', $article->id) }}"><button type="button" class="btn btn-danger">
@@ -19,25 +39,6 @@
 
   </div>
 
-  <hr>
-
-  <div class = "row">
-    <div class = "col-md-12">
-      <article> {{ $article->title }}</article>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class = "row">
-    <p class = "col-md-12">
-      {{ $article -> body }}
-    </p>
-  </div>
-
-  <hr>
-
-  @include('article.tags',compact('article'))
 
 </div>
 @endsection
