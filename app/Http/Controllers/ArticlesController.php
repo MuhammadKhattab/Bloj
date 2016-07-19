@@ -86,6 +86,6 @@ class ArticlesController extends Controller
           return redirect('article');
         }
       return view('errors.404');
-      }
+    }
 
 }

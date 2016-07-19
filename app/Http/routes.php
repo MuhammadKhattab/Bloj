@@ -21,6 +21,4 @@ Route::resource('article', 'ArticlesController');
 
 Route::get('about', 'PagesController@about');
 
-Route::get('trial', function() {
-  return view('article.trial');
-});
+Route::get('search', 'PagesController@search');

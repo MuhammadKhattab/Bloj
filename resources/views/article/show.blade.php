@@ -19,7 +19,7 @@
 
   <hr>
 
-  @include('article.tags',compact('article'))
+  @include('article.tags')
 
   <hr>
 

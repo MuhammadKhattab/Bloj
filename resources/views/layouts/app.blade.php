@@ -42,8 +42,20 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
+              <div class="col-sm-3 col-md-6">
+                {!! Form::open(['method'=>'GET','url'=>'search','class'=>'navbar-form navbar-left','role'=>'search']) !!}
+                  <div class="input-group">
+                      {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
+                      <div class="input-group-btn">
+                          <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                      </div>
+                  </div>
+                  {!! Form::close() !!}
+              </div>
+
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">
+
                   <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                       Wandern <span class="caret"></span></a>
