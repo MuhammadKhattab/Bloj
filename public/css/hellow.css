@@ -1,6 +1,8 @@
 body {
     font-family: 'Lato';
-    background-color: #ffeddc;
+    background-color: #e6f3ff;
+    height: 100%;
+    padding-top: 60px;
 }
 
 .fa-btn {
@@ -17,7 +19,8 @@ p {
 
 /*tags*/
 .tag-box {
-  margin: 2px 2px 2px 2px ;
+  margin: 1px 0px 1px 4px ;
+  /*padding: 3px 3px 3px 3px ;*/
   border-radius: 3px;
   text-align: center;
   border: solid;

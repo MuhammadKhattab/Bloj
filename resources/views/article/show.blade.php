@@ -9,8 +9,6 @@
     </div>
   </div>
 
-  <hr>
-
   <div class = "row">
     <p class = "col-md-12">
       {{ $article -> body }}
@@ -26,8 +24,6 @@
   </div>
 
   @include('article.tags')
-
-  <hr>
 
   @if($article->user_id === Auth::user()->id)
     <div class = "row">
@@ -46,7 +42,6 @@
 
     </div>
   @endif
-
 
 </div>
 @endsection

@@ -4,7 +4,7 @@
   <div class = "container">
 
     <h4>Wanna see a magic trick?</h4>
-    <p>Hit the hat the the magic wand to travel!</p>
+    <p>Hit the hat the the magic wand...</p>
     <div class = "row">
 
       <div class = "col-md-3">

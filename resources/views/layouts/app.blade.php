@@ -22,7 +22,7 @@
 
 </head>
 <body id="app-layout">
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
 
@@ -89,20 +89,57 @@
             </div>
         </div>
     </nav>
+
     <div class = "container">
       @include('flash::message')
     </div>
 
     @yield('content')
 
-    <!-- JavaScripts -->
-    <!-- <script src = {{ url('js/all.js')}}></script> -->
-    <script src={{ url("js/libs/jquery.min.js")}}></script>
-    <script src={{ url("js/libs/bootstrap.min.js")}}></script>
-    <script src={{ url("js/libs/select2.min.js")}}></script>
-    <script src={{ url("js/libs/jquery-ui.js")}}></script>
-    <script src={{ url("js/libs/jquery-ui-punch.min.js")}}></script>
-    <script src={{ url("js/hellow.js")}}></script>
-
 </body>
+
+<footer>
+
+  <div class="navbar navbar-default navbar-fixed-bottom">
+
+    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#app-navbar-collapse-footer">
+        <span class="sr-only">Toggle Navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+    </button>
+
+    <div class="container">
+      <div class="collapse navbar-collapse" id="app-navbar-collapse-footer">
+
+      <div class="row">
+        <div class="col-md-3">
+          <button type="button" name="button" class = "btn btn-link">Contact us</button>
+        </div>
+        <div class="col-md-3">
+          <button type="button" name="button" class = "btn btn-link">About</button>
+        </div>
+        <div class="col-md-3">
+          <button type="button" name="button" class = "btn btn-link">Report a problem</button>
+        </div>
+        <div class="col-md-3">
+          <button type="button" name="button" class = "btn btn-link">Work with us</button>
+        </div>
+      </div>
+
+    </div>
+    </div>
+
+</footer>
+
+<!-- JavaScripts -->
+<!-- <script src = {{ url('js/all.js')}}></script> -->
+<script src={{ url("js/libs/jquery.min.js")}}></script>
+<script src={{ url("js/libs/bootstrap.min.js")}}></script>
+<script src={{ url("js/libs/select2.min.js")}}></script>
+<script src={{ url("js/libs/jquery-ui.js")}}></script>
+<script src={{ url("js/libs/jquery-ui-punch.min.js")}}></script>
+<script src={{ url("js/hellow.js")}}></script>
+
+
 </html>

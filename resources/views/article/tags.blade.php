@@ -5,8 +5,8 @@
 
   <p class = "row">
     @foreach($article->tags as $tag)
-      <span class = "tag-box">{{ $tag->name }}</span>
+      <span class = "col-md-2 col-sm-3 col-xs-3 tag-box">{{ $tag->name }}</span>
     @endforeach
-    
+
   </p>
 @endif

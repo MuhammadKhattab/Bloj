@@ -17,7 +17,7 @@ $(document).ready( function() {
 
     $( "#droppable-explore" ).droppable({
       drop: function( event, ui ) {
-        window.location.href = "http://localhost:8000/article";
+        window.location.href = "http://localhost:8000/magic";
       }
     });
   } );
