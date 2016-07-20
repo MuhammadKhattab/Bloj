@@ -111,23 +111,12 @@
 
     <div class="container">
       <div class="collapse navbar-collapse" id="app-navbar-collapse-footer">
-
-      <div class="row">
-        <div class="col-md-3">
-          <button type="button" name="button" class = "btn btn-link">Contact us</button>
-        </div>
-        <div class="col-md-3">
-          <button type="button" name="button" class = "btn btn-link">About</button>
-        </div>
-        <div class="col-md-3">
-          <button type="button" name="button" class = "btn btn-link">Report a problem</button>
-        </div>
-        <div class="col-md-3">
-          <button type="button" name="button" class = "btn btn-link">Work with us</button>
-        </div>
+        <ul class="nav navbar-nav">
+          <li><a href= {{ url('about')}}>About</a></li>
+          <li><a href= {{ url('contact')}}>Contact us</a></li>
+          <li><a href= {{ url('magic')}}>Magic</a></li>
+        </ul>
       </div>
-
-    </div>
     </div>
 
 </footer>
