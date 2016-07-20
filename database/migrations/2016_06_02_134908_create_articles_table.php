@@ -19,6 +19,7 @@ class CreateArticlesTable extends Migration
             $table->string('body');
             $table->timestamps();
             $table->timestamp('published_at');
+            $table->text('excerpt')->nullable();
 
             $table->foreign('user_id')
                   ->references('id')

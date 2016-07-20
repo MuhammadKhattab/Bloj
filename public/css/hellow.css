@@ -16,14 +16,16 @@ p {
 }
 
 /*tags*/
-.well {
+.tag-box {
+  margin: 2px 2px 2px 2px ;
+  border-radius: 3px;
+  text-align: center;
   border: solid;
   border-width: 1px;
-  margin-right: 2px;
-  border-color: #660066;
+  border-color: #31708f;
   color: #1e3044;
-  background-color: #f2dede;
-  text-align: center;
+  background-color: #f8fff5;
+  color: #1e3044;
 }
 
 .btn {

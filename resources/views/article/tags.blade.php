@@ -1,10 +1,12 @@
 @if($article->tags->isEmpty())
-  <h5>No tags</h5>
+  <h6>No tags</h6>
 @else
-  <h5>Tags:</h5>
-  <div class = "row">
+  <h6>Tags:</h6>
+
+  <p class = "row">
     @foreach($article->tags as $tag)
-      <h5 class = "col-md-2 col-sm-3 col-xs-3 well well-sm">{{ $tag->name }}</h5>
+      <span class = "tag-box">{{ $tag->name }}</span>
     @endforeach
-  </div>
-@endunless
+    
+  </p>
+@endif

@@ -27,5 +27,21 @@ class TagsTableSeeder extends Seeder
           'name' => 'Photography'
       ]);
 
+      DB::table('tags')->insert([
+          'name' => 'Humor'
+      ]);
+
+      DB::table('tags')->insert([
+          'name' => 'Joy'
+      ]);
+
+      DB::table('tags')->insert([
+          'name' => 'Space'
+      ]);
+
+      DB::table('tags')->insert([
+          'name' => 'Science'
+      ]);
+
     }
 }

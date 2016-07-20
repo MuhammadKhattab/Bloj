@@ -17,10 +17,11 @@
 
   <div class = "row">
     <div class = "col-md-12">
-      <h5>Author:
+      <h6>Author:
+        <!-- Need an alternative -->
         <?php $user = App\User::findOrFail($article->user_id); ?>
         {{ $user->name }}
-      </h5>
+      </h6>
     </div>
   </div>
 
