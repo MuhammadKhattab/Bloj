@@ -7,6 +7,15 @@
     </div>
   </div>
 
+  <div class = "row">
+    <div class = "col-md-12">
+      <h5>Author:
+        <?php $user = App\User::findOrFail($article->user_id); ?>
+        {{ $user->name }}
+      </h5>
+    </div>
+  </div>
+
   @include('article.tags')
 
   <hr>

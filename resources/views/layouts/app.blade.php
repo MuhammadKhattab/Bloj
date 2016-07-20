@@ -43,7 +43,7 @@
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
               <div class="col-sm-3 col-md-6">
-                {!! Form::open(['method'=>'GET','url'=>'search','class'=>'navbar-form navbar-left','role'=>'search']) !!}
+                {!! Form::open(['method'=>'GET','url'=>'search/articles','class'=>'navbar-form navbar-left','role'=>'search']) !!}
                   <div class="input-group">
                       {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
                       <div class="input-group-btn">

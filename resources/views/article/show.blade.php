@@ -19,6 +19,12 @@
 
   <hr>
 
+  <div class = "row">
+    <div class = "col-md-12">
+      <h5>Author: {{ $user->name }} </h5>
+    </div>
+  </div>
+
   @include('article.tags')
 
   <hr>

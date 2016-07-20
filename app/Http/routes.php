@@ -21,4 +21,4 @@ Route::resource('article', 'ArticlesController');
 
 Route::get('about', 'PagesController@about');
 
-Route::get('search', 'PagesController@search');
+Route::get('search/articles', 'QueriesController@searchArticles');

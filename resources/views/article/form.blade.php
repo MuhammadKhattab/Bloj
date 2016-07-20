@@ -23,7 +23,7 @@
       {!! Form::label('tag_list','Tags:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::select('tag_list[]', $tags, $article->getTagListAttribute(), ['id'=>'tag_list', 'class' => 'form-control', 'multiple']) !!}
+      {!! Form::select('tag_list[]', $tags, null, ['id'=>'tag_list', 'class' => 'form-control', 'multiple']) !!}
     </div>
   </div>
 

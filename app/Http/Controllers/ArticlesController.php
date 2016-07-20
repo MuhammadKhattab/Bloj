@@ -10,6 +10,8 @@ use App\Article;
 
 use App\Tag;
 
+use App\User;
+
 use Auth;
 
 class ArticlesController extends Controller
@@ -21,12 +23,16 @@ class ArticlesController extends Controller
 
     public function index() {
       $articles = Article::latest('published_at')->get();
+
       return view('article.index', compact('articles'));
     }
 
     public function show($id) {
       $article = Article::findOrFail($id);
-      return view('article.show', compact('article'));
+
+      $user = User::findOrFail($article->user_id);
+
+      return view('article.show', compact('article', 'user'));
     }
 
     public function create() {
