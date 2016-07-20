@@ -11,6 +11,10 @@ body {
   margin-right: 4px;
 }
 
+p {
+  margin-left: 10px;
+}
+
 /*tags*/
 .well {
   border: solid;

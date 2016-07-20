@@ -7,6 +7,14 @@
     </div>
   </div>
 
+  @if($article->excerpt != null)
+  <div class = "row">
+    <div class = "col-md-12">
+      <p>Excerpt: {{ $article -> excerpt }} </p>
+    </div>
+  </div>
+  @endif
+
   <div class = "row">
     <div class = "col-md-12">
       <h5>Author:

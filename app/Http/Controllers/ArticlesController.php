@@ -47,6 +47,10 @@ class ArticlesController extends Controller
 
       $article = Auth::user()->articles()->create($input);
 
+      // IDK why it's only working this way
+      $article->excerpt = $input['excerpt'];
+      $article->save();
+
       $article->tags()->attach($request->input('tag_list'));
 
       flash()->warning('Your Article has been created successfully! How kool!');
@@ -68,6 +72,10 @@ class ArticlesController extends Controller
       $article = Article::findOrFail($id);
       if($article->user_id === Auth::user()->id) {
         $article->update($request->all());
+
+        // IDK why it's only working this way
+        $article->excerpt = $request['excerpt'];
+        $article->save();
 
         if($request->input('tag_list') != null) {
           $article->tags()->sync($request->input('tag_list'));
