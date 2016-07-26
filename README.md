@@ -1,4 +1,4 @@
 # Bloj
 My first Laravel app
-- Blog system
+- Blog
 
