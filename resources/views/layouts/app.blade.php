@@ -42,16 +42,14 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-              <div class="col-sm-3 col-md-6">
-                {!! Form::open(['method'=>'GET','url'=>'search/articles','class'=>'navbar-form navbar-left','role'=>'search']) !!}
-                  <div class="input-group">
-                      {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
-                      <div class="input-group-btn">
-                          <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                      </div>
-                  </div>
-                  {!! Form::close() !!}
-              </div>
+              {!! Form::open(['method'=>'GET','url'=>'search/articles','class'=>'navbar-form navbar-left','role'=>'search']) !!}
+                <div class="input-group">
+                    {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
+                    <div class="input-group-btn">
+                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
+                    </div>
+                </div>
+              {!! Form::close() !!}
 
                 <!-- Right Side Of Navbar -->
                 <ul class="nav navbar-nav navbar-right">

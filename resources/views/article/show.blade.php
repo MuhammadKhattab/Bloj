@@ -25,7 +25,7 @@
 
   @include('article.tags')
 
-  @if($article->user_id === Auth::user()->id)
+  @if(Auth::check() && $article->user_id === Auth::user()->id)
     <div class = "row">
 
       <div class = "col-md-1">
