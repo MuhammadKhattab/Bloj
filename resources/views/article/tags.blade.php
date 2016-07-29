@@ -5,7 +5,9 @@
 
   <p class = "row">
     @foreach($article->tags as $tag)
-      <span class = "col-md-2 col-sm-3 col-xs-3 tag-box">{{ $tag->name }}</span>
+      <a href="{{ url("tags",['name' => $tag->name]) }}">
+        <span class = "col-md-2 col-sm-3 col-xs-3 tag-box">{{ $tag->name }}</span>
+      </a>
     @endforeach
 
   </p>

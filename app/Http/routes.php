@@ -24,3 +24,7 @@ Route::resource('article', 'ArticlesController');
 Route::get('search/articles', 'QueriesController@searchArticles');
 
 Route::get('magic','PagesController@magic');
+
+Route::get('tags/{name}','QueriesController@searchByTag');
+
+Route::get('tags', 'TagsController@index');

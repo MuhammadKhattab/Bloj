@@ -8,6 +8,10 @@ use App\Http\Requests;
 
 use App\Article;
 
+use DB;
+
+use App\Tag;
+
 class QueriesController extends Controller
 {
 
@@ -15,8 +19,6 @@ class QueriesController extends Controller
   {
       $query = $request->input('search');
       if($query != '') {
-        // Returns an array of articles that have the query string located somewhere within
-        // our articles titles. Paginates them so we can break up lots of search results.
         $articles = Article::where('title', 'LIKE', '%' . $query . '%')
                              ->orWhere('excerpt', 'Like', '%' . $query . '%')
                              ->paginate(10);
@@ -24,4 +26,20 @@ class QueriesController extends Controller
       }
       return app('App\Http\Controllers\ArticlesController')->index();
    }
+
+   public function searchByUser(Request $request) {
+
+   }
+
+   public function searchByTag($query) {
+     if($query != '') {
+       $tag = Tag::where('name', $query)->first();
+       if($tag != null) {
+         $articles = $tag->articles;
+         return view('pages.searchArticles', compact('articles', 'query'));
+       }
+     }
+     return app('App\Http\Controllers\ArticlesController')->index();
+   }
+
 }
