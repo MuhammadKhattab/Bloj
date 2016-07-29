@@ -9,7 +9,7 @@
 
     {!! Form::open(['url' => 'article', 'id'=>'thaForm']) !!}
 
-    @include('article.form',['submitButtonText' => 'Add Article'])
+    @include('articles.form',['submitButtonText' => 'Add Article'])
 
     {!! Form::close() !!}
 

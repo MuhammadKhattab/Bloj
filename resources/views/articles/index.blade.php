@@ -12,13 +12,13 @@
 
   <div class = "row">
       <div class = "col-md-12">
-        <h4>Wanna <a href="{{ url('/article/create') }}">create</a> a new article?</h4>
+        <h4>Wanna <a href="{{ url('/articles/create') }}">create</a> a new article?</h4>
       </div>
   </div>
 
     <hr>
 
-    @include('article.articles')
+    @include('articles.articles')
 
 </div>
 @endsection

@@ -19,12 +19,14 @@ Route::get('contact', 'PagesController@contact');
 
 Route::get('about', 'PagesController@about');
 
-Route::resource('article', 'ArticlesController');
+Route::get('magic','PagesController@magic');
+
 
 Route::get('search/articles', 'QueriesController@searchArticles');
 
-Route::get('magic','PagesController@magic');
 
-Route::get('tags/{name}','QueriesController@searchByTag');
+Route::resource('articles', 'ArticlesController');
 
-Route::get('tags', 'TagsController@index');
+Route::resource('tags', 'TagsController');
+
+Route::resource('users', 'UsersController');

@@ -16,4 +16,13 @@ class TagsController extends Controller
       return view('pages.tags', compact('tags'));
     }
 
+    public function show($id) {
+      $tag = Tag::findOrFail($id);
+
+      $articles = $tag -> articles;
+
+      $query = $tag -> name;
+
+      return view('articles.searchArticles', compact('articles', 'query'));
+    }
 }

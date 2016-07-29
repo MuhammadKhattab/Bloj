@@ -19,22 +19,28 @@
 
   <div class = "row">
     <div class = "col-md-12">
-      <h5>Author: {{ $user->name }} </h5>
+      <h5>Author:
+        <a href="{{ url("users",['id' => $user->id]) }}">
+          {{ $user->name }}
+        </a>
+      </h5>
     </div>
   </div>
 
-  @include('article.tags')
+  <h5>Created at: {{ $article->published_at }}</h5>
+
+  @include('articles.tags')
 
   @if(Auth::check() && $article->user_id === Auth::user()->id)
     <div class = "row">
 
       <div class = "col-md-1">
-        <a href="{{ route('article.edit', $article->id) }}"><button type="button" class="btn btn-danger">
+        <a href="{{ route('articles.edit', $article->id) }}"><button type="button" class="btn btn-danger">
           <i class="fa fa-pencil fa-fw" aria-hidden="true"></i>Edit</button></a>
       </div>
 
       <div class = "col-md-1">
-        {!! Form::open(['method' => 'DELETE', 'route' => ['article.destroy', $article->id]]) !!}
+        {!! Form::open(['method' => 'DELETE', 'route' => ['articles.destroy', $article->id]]) !!}
           <button type="submit" class="btn btn-danger">
             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
         {!! Form::close() !!}

@@ -12,7 +12,7 @@
       @if (count($articles) === 0)
         <h5>No results found</h5>
       @else
-        @include('article.articles')
+        @include('articles.articles')
       @endif
 
   </div>

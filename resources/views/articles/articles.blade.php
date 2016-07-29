@@ -2,7 +2,7 @@
   <div class = "row">
     <div class="col-md-12">
         <article>
-          <a href = {{ url('article', $article->id)}}>  {{$article->title}} </a>
+          <a href = {{ url('articles', $article->id)}}>  {{$article->title}} </a>
         </article>
     </div>
   </div>
@@ -17,15 +17,20 @@
 
   <div class = "row">
     <div class = "col-md-12">
+      <!-- Need an alternative -->
+      <?php $user = App\User::find($article->user_id); ?>
       <h6>Author:
-        <!-- Need an alternative -->
-        <?php $user = App\User::find($article->user_id); ?>
-        {{ $user->name }}
+        <a href="{{ url("users",['id' => $user->id]) }}">
+          {{ $user->name }}
+        </a>
       </h6>
+
     </div>
   </div>
 
-  @include('article.tags')
+  <h6>Created at: {{ $article->published_at}}</h6>
+
+  @include('articles.tags')
 
   <hr>
 

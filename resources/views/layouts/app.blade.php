@@ -58,10 +58,10 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                       Wandern <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="{{ url('/article') }}">All articles</a></li>
+                      <li><a href="{{ url('/articles') }}">All articles</a></li>
                       <li><a href="{{ url('/tags') }}">All tags</a></li>
                       @if(Auth::user())
-                        <li><a href="{{ url('article/create') }}">Create an article</a></li>
+                        <li><a href="{{ url('articles/create') }}">Create an article</a></li>
                       @endif
                       <li role="separator" class="divider"></li>
                       <li><a href="{{ url('/about') }}">About</a></li>

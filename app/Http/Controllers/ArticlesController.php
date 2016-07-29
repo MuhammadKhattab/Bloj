@@ -24,7 +24,7 @@ class ArticlesController extends Controller
     public function index() {
       $articles = Article::latest('published_at')->get();
 
-      return view('article.index', compact('articles'));
+      return view('articles.index', compact('articles'));
     }
 
     public function show($id) {
@@ -32,13 +32,13 @@ class ArticlesController extends Controller
 
       $user = User::findOrFail($article->user_id);
 
-      return view('article.show', compact('article', 'user'));
+      return view('articles.show', compact('article', 'user'));
     }
 
     public function create() {
       $tags = Tag::lists('name', 'id');
 
-      return view('article.create', compact('tags'));
+      return view('articles.create', compact('tags'));
     }
 
     public function store(ArticleRequest $request) {
@@ -55,7 +55,7 @@ class ArticlesController extends Controller
 
       flash()->warning('Your Article has been created successfully! How kool!');
 
-      return redirect('article');
+      return redirect('articles');
     }
 
     public function edit($id) {
@@ -63,7 +63,7 @@ class ArticlesController extends Controller
       if($article->user_id === Auth::user()->id) {
         $tags = Tag::lists('name', 'id');
 
-        return view('article.edit', compact('article', 'tags'));
+        return view('articles.edit', compact('article', 'tags'));
       }
       return view('errors.404');
     }
@@ -86,7 +86,7 @@ class ArticlesController extends Controller
 
         flash()->info('Your Article has been edited successfully!');
       }
-        return redirect('article');
+        return redirect('articles');
     }
 
     public function destroy($id)
@@ -97,7 +97,7 @@ class ArticlesController extends Controller
 
           flash()->success('Your Article has been deleted successfully! Party Hard!');
 
-          return redirect('article');
+          return redirect('articles');
         }
       return view('errors.404');
     }

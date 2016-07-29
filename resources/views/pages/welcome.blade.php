@@ -38,7 +38,7 @@
 
     <div class="row">
         <span class "col-md-12">
-          <a href="{{ url('/article') }}"><button type="button" class="btn btn-danger">Explore Articles</button></a>
+          <a href="{{ url('/articles') }}"><button type="button" class="btn btn-danger">Explore Articles</button></a>
         </span>
     </div>
 </div>

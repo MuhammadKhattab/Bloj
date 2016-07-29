@@ -9,7 +9,7 @@
 
     {!! Form::model($article, ['method' => 'PATCH', 'action' =>['ArticlesController@update', $article->id], 'id' =>'thaForm']) !!}
 
-      @include('article.form', ['submitButtonText' => 'Update Article'])
+      @include('articles.form', ['submitButtonText' => 'Update Article'])
 
     {!! Form::close() !!}
 

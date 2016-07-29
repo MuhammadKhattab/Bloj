@@ -22,31 +22,9 @@ class QueriesController extends Controller
         $articles = Article::where('title', 'LIKE', '%' . $query . '%')
                              ->orWhere('excerpt', 'Like', '%' . $query . '%')
                              ->paginate(10);
-        return view('pages.search', compact('articles', 'query'));
+        return view('articles.searchArticles', compact('articles', 'query'));
       }
       return app('App\Http\Controllers\ArticlesController')->index();
-   }
-
-   public function searchByUser($query) {
-     if($query != '') {
-       $user = User::where('name', $query)->first();
-       if($user != null) {
-         $articles = $user->articles;
-         return view('pages.searchArticles', compact('articles', 'query'));
-       }
-     }
-     return app('App\Http\Controllers\ArticlesController')->index();
-   }
-
-   public function searchByTag($query) {
-     if($query != '') {
-       $tag = Tag::where('name', $query)->first();
-       if($tag != null) {
-         $articles = $tag->articles;
-         return view('pages.searchArticles', compact('articles', 'query'));
-       }
-     }
-     return app('App\Http\Controllers\ArticlesController')->index();
    }
 
 }
