@@ -33,4 +33,6 @@ $(document).ready( function() {
     });
   } );
 
+  // texteditor
+  tinymce.init({ selector:'textarea' });
 });

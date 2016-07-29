@@ -58,8 +58,8 @@
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                       Wandern <span class="caret"></span></a>
                     <ul class="dropdown-menu">
-                      <li><a href="{{ url('/article') }}">Explore articles</a></li>
-                      <li><a href="{{ url('/tags') }}">Explore tags</a></li>
+                      <li><a href="{{ url('/article') }}">All articles</a></li>
+                      <li><a href="{{ url('/tags') }}">All tags</a></li>
                       @if(Auth::user())
                         <li><a href="{{ url('article/create') }}">Create an article</a></li>
                       @endif
@@ -127,6 +127,7 @@
 <script src={{ url("js/libs/select2.min.js")}}></script>
 <script src={{ url("js/libs/jquery-ui.js")}}></script>
 <script src={{ url("js/libs/jquery-ui-punch.min.js")}}></script>
+<script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
 <script src={{ url("js/hellow.js")}}></script>
 
 

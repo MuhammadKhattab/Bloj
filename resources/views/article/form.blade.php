@@ -23,7 +23,7 @@
       {!! Form::label('excerpt','Excerpt:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article']) !!}
+      {!! Form::text('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article']) !!}
     </div>
   </div>
 
