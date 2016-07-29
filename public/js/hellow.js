@@ -33,6 +33,7 @@ $(document).ready( function() {
     });
   } );
 
-  // texteditor
-  tinymce.init({ selector:'textarea' });
+  // text editor for the body
+  // tinymce.init({ selector:'textarea#article-body'});
+
 });

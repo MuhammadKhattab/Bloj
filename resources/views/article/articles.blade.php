@@ -19,7 +19,7 @@
     <div class = "col-md-12">
       <h6>Author:
         <!-- Need an alternative -->
-        <?php $user = App\User::findOrFail($article->user_id); ?>
+        <?php $user = App\User::find($article->user_id); ?>
         {{ $user->name }}
       </h6>
     </div>

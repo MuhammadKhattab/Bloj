@@ -14,7 +14,7 @@
       {!! Form::label('body','Body:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Write down your content']) !!}
+      {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Write down your content', 'id' => 'article-body']) !!}
     </div>
   </div>
 
@@ -23,7 +23,7 @@
       {!! Form::label('excerpt','Excerpt:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::text('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article']) !!}
+      {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article']) !!}
     </div>
   </div>
 

@@ -8,7 +8,7 @@ use App\Http\Requests;
 
 use App\Article;
 
-use DB;
+use App\User;
 
 use App\Tag;
 
@@ -27,8 +27,15 @@ class QueriesController extends Controller
       return app('App\Http\Controllers\ArticlesController')->index();
    }
 
-   public function searchByUser(Request $request) {
-
+   public function searchByUser($query) {
+     if($query != '') {
+       $user = User::where('name', $query)->first();
+       if($user != null) {
+         $articles = $user->articles;
+         return view('pages.searchArticles', compact('articles', 'query'));
+       }
+     }
+     return app('App\Http\Controllers\ArticlesController')->index();
    }
 
    public function searchByTag($query) {
