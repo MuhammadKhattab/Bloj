@@ -59,6 +59,7 @@
                       Wandern <span class="caret"></span></a>
                     <ul class="dropdown-menu">
                       <li><a href="{{ url('/article') }}">Explore articles</a></li>
+                      <li><a href="{{ url('/tags') }}">Explore tags</a></li>
                       @if(Auth::user())
                         <li><a href="{{ url('article/create') }}">Create an article</a></li>
                       @endif

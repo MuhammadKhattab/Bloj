@@ -4,7 +4,9 @@
   <div class="container">
 
     @foreach($tags as $tag)
-      <h6>{{ $tag->name }}</h6>
+    <a href="{{ url("tags",['name' => $tag->name]) }}">
+      <h5 class = "col-md-4">{{ $tag->name }}</h5>
+    </a>
     @endforeach
 
   </div>
