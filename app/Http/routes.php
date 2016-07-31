@@ -22,7 +22,17 @@ Route::get('about', 'PagesController@about');
 Route::get('magic','PagesController@magic');
 
 
+
+Route::get('settings', 'SettingsController@index');
+
+Route::post('settings/edit_password', 'SettingsController@updatePassword');
+
+Route::post('settings/edit_name', 'SettingsController@updateName');
+
+
+
 Route::get('search/articles', 'QueriesController@searchArticles');
+
 
 
 Route::resource('articles', 'ArticlesController');

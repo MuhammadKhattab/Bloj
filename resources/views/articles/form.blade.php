@@ -36,7 +36,7 @@
     </div>
   </div>
 
-  <h5>Click th button</h5>
+  <h5>Click the button</h5>
   <div class="form-group">
       <div class="col-sm-offset-1 col-sm-2">
         {!! Form::submit($submitButtonText,['class' => 'btn-danger form-control']) !!}

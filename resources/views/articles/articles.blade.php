@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <h6>Created at: {{ $article->published_at}}</h6>
+  <h6>Published at: {{ $article->published_at}}</h6>
 
   @include('articles.tags')
 
