@@ -17,12 +17,11 @@
 
   <div class = "row">
     <div class = "col-md-12">
-      <!-- Need an alternative -->
-      <?php $user = App\User::find($article->user_id); ?>
+
+      <?php $user = $authors[$article->user_id]; ?>
+      
       <h6>Author:
-        <a href="{{ url("users",['id' => $user->id]) }}">
-          {{ $user->name }}
-        </a>
+        <a href="{{ url("users",['id' => $user->id]) }}">{{ $user->name }}</a>
       </h6>
 
     </div>

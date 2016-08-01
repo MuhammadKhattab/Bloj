@@ -17,8 +17,9 @@ class UsersController extends Controller
 
     $articles = $user->articles;
 
-    return view('users.show', compact('articles', 'user'));
+    $authors[$user->id] = $user;
 
+    return view('users.show', compact('articles', 'user', 'authors'));
   }
 
   public function profile() {

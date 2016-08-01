@@ -24,7 +24,12 @@ class ArticlesController extends Controller
     public function index() {
       $articles = Article::latest('published_at')->get();
 
-      return view('articles.index', compact('articles'));
+      $authors;
+      foreach($articles as $article) {
+          $authors[$article->user_id] = User::find($article->user_id);
+      }
+
+      return view('articles.index', compact('articles', 'authors'));
     }
 
     public function show($id) {
