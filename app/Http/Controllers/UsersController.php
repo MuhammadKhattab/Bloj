@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\User;
 
+use Auth;
+
 class UsersController extends Controller
 {
   public function show($id) {
@@ -18,4 +20,11 @@ class UsersController extends Controller
     return view('users.show', compact('articles', 'user'));
 
   }
+
+  public function profile() {
+    if(Auth::check()){
+      return $this-> show(Auth::user()->id);
+    }
+  }
+
 }

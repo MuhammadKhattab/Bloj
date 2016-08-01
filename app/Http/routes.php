@@ -40,3 +40,5 @@ Route::resource('articles', 'ArticlesController');
 Route::resource('tags', 'TagsController');
 
 Route::resource('users', 'UsersController');
+
+Route::get('profile', 'UsersController@profile');

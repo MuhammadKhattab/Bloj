@@ -28,6 +28,7 @@
     <div class="container">
 
       <div class = "row">
+        <!-- display classes are not working -->
         <h1 class = "display-1 col-md-2 col-md-offset-4 welcome-text">Bloj</h1>
       </div>
 

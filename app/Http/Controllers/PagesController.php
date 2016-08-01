@@ -6,9 +6,14 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use Auth;
+
 class PagesController extends Controller
 {
     public function welcome() {
+      if(Auth::check()) {
+        return app('App\Http\Controllers\ArticlesController')->index();
+      }
       return view('pages.welcome');
     }
 
