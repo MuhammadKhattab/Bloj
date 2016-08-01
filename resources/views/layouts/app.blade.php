@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Hellow</title>
+    <title>Bloj</title>
 
     <!-- Fonts -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.min.css" integrity="sha384-XdYbMnZ/QjLh6iI4ogqCTaIjrFk87ip+ekIjefZch0Y+PvJ8CDYtEs1ipDmPorQ+" crossorigin="anonymous">
@@ -21,7 +21,7 @@
     <link rel="shortcut icon" href="{{ url('img/title.png') }}">
 
 </head>
-<body id="app-layout">
+<body>
     <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -42,12 +42,16 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-              {!! Form::open(['method'=>'GET','url'=>'search/articles','class'=>'navbar-form navbar-left','role'=>'search']) !!}
-                <div class="input-group">
+              {!! Form::open(['method'=>'GET','url'=>'search/articles','role'=>'search']) !!}
+                <div class="col-sm-4 col-md-offset-1">
+                  <div class="input-group mi-input-group">
                     {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
-                    <div class="input-group-btn">
-                        <button class="btn btn-default" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-                    </div>
+                      <span class="input-group-addon">
+                          <button type="submit">
+                              <span class="fa fa-search"></span>
+                          </button>
+                      </span>
+                  </div>
                 </div>
               {!! Form::close() !!}
 
@@ -122,13 +126,12 @@
 </footer>
 
 <!-- JavaScripts -->
-<!-- <script src = {{ url('js/all.js')}}></script> -->
 <script src={{ url("js/libs/jquery.min.js")}}></script>
 <script src={{ url("js/libs/bootstrap.min.js")}}></script>
 <script src={{ url("js/libs/select2.min.js")}}></script>
 <script src={{ url("js/libs/jquery-ui.js")}}></script>
 <script src={{ url("js/libs/jquery-ui-punch.min.js")}}></script>
-<script src="https://cdn.tinymce.com/4/tinymce.min.js"></script>
+<!-- <script src="https://cdn.tinymce.com/4/tinymce.min.js"></script> -->
 <script src={{ url("js/hellow.js")}}></script>
 
 

@@ -14,10 +14,21 @@ p {
   margin-left: 10px;
 }
 
+.mi-input-group {
+    margin-top: 7px;
+}
+
+.mi-input-group .input-group-addon{
+    background: white !important;
+}
+.mi-input-group button{
+    border:0;
+    background:transparent;
+}
+
 /*tags*/
 .tag-box {
   margin: 1px 0px 1px 4px ;
-  /*padding: 3px 3px 3px 3px ;*/
   border-radius: 3px;
   text-align: center;
   border: solid;
@@ -32,7 +43,6 @@ p {
   margin-bottom: 15px;
 }
 
-  /*form*/
  hr {
    border: 0;
    height: 1px;
@@ -46,6 +56,7 @@ p {
     background-color: transparent;
     border: none;
    }
+
  #droppable-explore, #droppable-submit {
     z-index: 9;
     padding: 0.5em; float: left; margin: 10px;
@@ -54,35 +65,27 @@ p {
   }
 
 /*welcome*/
-#welcome-comp {
-  position: absolute;
-  left: 38%;
-  top: 60%;
+
+.welcome-btns {
+}
+
+.welcome-btn {
+  font-size: 16px;
+}
+
+.welcome-text {
+  color: white;
   text-align: center;
 }
 
-#welcome-logo {
-  position: absolute;
-  top: 10%;
-}
-#welcome-text {
-  font-size: 22px;
-  color: white;
-  font-weight: bold;
-}
-
   @media (max-width: 991px) {
-    #welcome-text {
+    .welcome-text {
       color: #333333;
     }
 
     #welcome-img {
       height: 0;
       width: 0;
-    }
-
-    #welcome-logo {
-      left: 15%;
     }
   }
 
@@ -102,9 +105,6 @@ p {
       overflow: auto;
     }
 
-    #welcome-logo {
-      left: 35%;
-    }
 }
 
 /*articles.index*/
@@ -114,13 +114,21 @@ article {
 
 /*login, register panel*/
 .panel-default > .panel-heading {
-  background-color: #4d1933;
+  background-color: #ce4b4b;
   color: #ffe6e6;
 }
 
 .panel-default > .panel-body {
-  background-color: #601f40;
+  background-color: #d35f5f;
   color: #ffe6e6;
+}
+
+#login-forgot:link {
+  color:#f2f2f2;
+}
+
+#login-forgot:visited, #login-forgot:active, #login-forgot:hover {
+  color:#cccccc;
 }
 
 /*navbar*/
