@@ -37,7 +37,7 @@ class TagsController extends Controller
 
     public function update($id, Request $request) {
       $tag = Tag::findOrFail($id);
-      $tag->update(['name' => $request->name])
+      $tag->update(['name' => $request->name]);
 
       return redirect('admin');
     }

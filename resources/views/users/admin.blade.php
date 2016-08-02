@@ -55,8 +55,15 @@
                 <td>{{ count($tag->articles) }}</td>
                 <td>
                   <div class = "col-md-1">
-                    <button type="submit" class="btn btn-primary">
-                      <i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
+                    <button type="submit" class="btn btn-primary" id = "edit-tag-{{ $tag->id }}"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
+                        <div id="edit-tag-content-{{ $tag->id }}" class="hide">
+                          {!! Form::open(['method' => 'PATCH', 'action' =>['TagsController@update', $tag->id], 'class' => 'form-inline']) !!}
+                            <div class="form-group">
+                              {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter tag name', 'required']) !!}
+                              {!! Form::submit('Submit', ['class' => 'btn-primary form-control']) !!}
+                            </div>
+                          {!! Form::close() !!}
+                        </div>
                     </div>
 
                   <div class = "col-md-1 col-md-offset-1">
@@ -73,4 +80,22 @@
     @endif
 
   </div>
+
+  <!-- edit tag name -->
+  <script src={{ url("js/libs/jquery.min.js")}}></script>
+  <script>
+    $(document).ready( function() {
+
+      var tags = <?php echo json_encode($tags->lists('id')); ?>;
+      for(var id in tags) {
+        $('#edit-tag-'+tags[id]).popover({
+            html : true,
+            content: function() {
+              return $("#edit-tag-content-"+tags[id]).html();
+            }
+        });
+      }
+
+    });
+  </script>
 @endsection
