@@ -27,7 +27,7 @@ class SettingsController extends Controller
       $user = Auth::user();
       $user->update(['name'=>$request->name]);
 
-      flash()->success('Your name has been updated successfully, Mr. Bond!');
+      flash()->success('Your name has been updated successfully!');
 
       return app('App\Http\Controllers\UsersController')->show($user->id);
     }

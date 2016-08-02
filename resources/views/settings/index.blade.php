@@ -3,7 +3,7 @@
 @section('content')
   <div class="container">
 
-    {!! Form::open(['url' => 'settings/edit_name']) !!}
+    {!! Form::open(['method' => 'PATCH', 'url' => 'settings/edit_name']) !!}
       <div class = "form-horizontal">
 
         <div class="form-group">
@@ -26,7 +26,7 @@
 
     <hr>
 
-    {!! Form::open(['url' => 'settings/edit_password']) !!}
+    {!! Form::open(['method' => 'PATCH', 'url' => 'settings/edit_password']) !!}
       <div class = "form-horizontal">
 
       <div class="form-group">

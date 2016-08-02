@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\User;
 
+use App\Tag;
+
 use Auth;
 
 class UsersController extends Controller
@@ -16,6 +18,8 @@ class UsersController extends Controller
   public function __construct() {
     $this->middleware('auth', ['except', 'show']);
   }
+
+
 
   public function show($id) {
     $user = User::findOrFail($id);
@@ -27,19 +31,27 @@ class UsersController extends Controller
     return view('users.show', compact('articles', 'user', 'authors'));
   }
 
+
+
   public function profile() {
     return $this -> show(Auth::user()->id);
   }
+
+
 
   public function admin() {
     if(strcmp(Auth::user()->role, 'Admin') === 0) {
 
       $users = User::all();
 
-      return view('users.admin', compact('users'));
+      $tags = Tag::all();
+
+      return view('users.admin', compact('users', 'tags'));
     }
     return redirect('/');
   }
+
+
 
   public function destroy($id) {
     $user = User::findOrFail($id);

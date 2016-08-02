@@ -60,6 +60,6 @@ Route::get('admin', 'UsersController@admin');
 */
 Route::get('settings', 'SettingsController@index');
 
-Route::post('settings/edit_password', 'SettingsController@updatePassword');
+Route::patch('settings/edit_password', 'SettingsController@updatePassword');
 
-Route::post('settings/edit_name', 'SettingsController@updateName');
+Route::patch('settings/edit_name', 'SettingsController@updateName');
