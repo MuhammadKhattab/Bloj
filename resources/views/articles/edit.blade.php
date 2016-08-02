@@ -13,7 +13,5 @@
 
     {!! Form::close() !!}
 
-    @include('errors.list')
-
   </div>
 @endsection

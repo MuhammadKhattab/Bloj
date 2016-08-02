@@ -63,9 +63,7 @@
                     <ul class="dropdown-menu">
                       <li><a href="{{ url('/articles') }}">All articles</a></li>
                       <li><a href="{{ url('/tags') }}">All tags</a></li>
-                      @if(Auth::user())
-                        <li><a href="{{ url('articles/create') }}">Create an article</a></li>
-                      @endif
+                      <li><a href="{{ url('articles/create') }}">Create an article</a></li>
                       <li role="separator" class="divider"></li>
                       <li><a href="{{ url('/about') }}">About</a></li>
                       <li><a href="{{ url('/contact') }}">Contact us</a></li>

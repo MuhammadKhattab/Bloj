@@ -9,6 +9,14 @@
     </div>
   </div>
 
+  @if ($errors->has('title'))
+    <div class="row">
+      <span class="col-md-3 col-md-offset-1">
+        <h6 class="alert alert-danger">{{ $errors->first('title') }}</h6>
+      </span>
+    </div>
+  @endif
+
   <div class="form-group">
     <div class = "col-md-1 control-label">
       {!! Form::label('body','Body:') !!}
@@ -17,6 +25,14 @@
       {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Write down your content', 'id' => 'article-body']) !!}
     </div>
   </div>
+
+  @if ($errors->has('title'))
+    <div class="row">
+      <span class="col-md-3 col-md-offset-1">
+        <h6 class="alert alert-danger">{{ $errors->first('title') }}</h6>
+      </span>
+    </div>
+  @endif
 
   <div class="form-group">
     <div class = "col-md-1 control-label">
