@@ -11,9 +11,9 @@ use App\Tag;
 class TagsController extends Controller
 {
     public function index() {
-      $tags = Tag::get();
+      $tags = Tag::all();
 
-      return view('pages.tags', compact('tags'));
+      return view('tags.index', compact('tags'));
     }
 
     public function show($id) {
@@ -21,8 +21,6 @@ class TagsController extends Controller
 
       $articles = $tag -> articles;
 
-      $query = $tag -> name;
-
-      return view('articles.searchArticles', compact('articles', 'query'));
+      return view('tags.show', compact('articles', 'tag'));
     }
 }

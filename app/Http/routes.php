@@ -31,7 +31,7 @@ Route::post('settings/edit_name', 'SettingsController@updateName');
 
 
 
-Route::get('search/articles', 'QueriesController@searchArticles');
+Route::get('search', 'QueriesController@search');
 
 
 

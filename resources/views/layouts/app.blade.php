@@ -41,7 +41,7 @@
 
             <div class="collapse navbar-collapse" id="app-navbar-collapse">
 
-              {!! Form::open(['method'=>'GET','url'=>'search/articles','role'=>'search']) !!}
+              {!! Form::open(['method'=>'GET','url'=>'search','role'=>'search']) !!}
                 <div class="col-sm-4 col-md-offset-1">
                   <div class="input-group mi-input-group">
                     {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}

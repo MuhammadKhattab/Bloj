@@ -15,14 +15,19 @@ use App\Tag;
 class QueriesController extends Controller
 {
 
-  public function searchArticles(Request $request)
+  public function search(Request $request)
   {
       $query = $request->input('search');
       if($query != '') {
         $articles = Article::where('title', 'LIKE', '%' . $query . '%')
                              ->orWhere('excerpt', 'Like', '%' . $query . '%')
                              ->paginate(10);
-        return view('articles.searchArticles', compact('articles', 'query'));
+
+        $users = User::where('name', 'LIKE', '%' . $query . '%')->get();
+
+        $tags = Tag::where('name', 'LIKE', '%' . $query . '%')->get();
+
+        return view('pages.search', compact('articles', 'query', 'users', 'tags'));
       }
       return app('App\Http\Controllers\ArticlesController')->index();
    }

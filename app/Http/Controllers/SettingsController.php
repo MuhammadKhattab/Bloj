@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Http\Requests\UpdatePasswordRequest;
+
 use Auth;
 
 use Hash;
@@ -27,7 +29,7 @@ class SettingsController extends Controller
       return app('App\Http\Controllers\UsersController')->show($user->id);
     }
 
-    public function updatePassword(Request $request) {
+    public function updatePassword(UpdatePasswordRequest $request) {
       $user =  Auth::user();
       if (Hash::check($request->oldPassword, $user->password)) {
         $user->update(['password' => bcrypt($request->newPassword)]);
