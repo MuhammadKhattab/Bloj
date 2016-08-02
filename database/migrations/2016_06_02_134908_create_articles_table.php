@@ -17,9 +17,8 @@ class CreateArticlesTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->string('title');
             $table->string('body');
+            $table->string('excerpt');
             $table->timestamps();
-            $table->timestamp('published_at');
-            $table->text('excerpt')->nullable();
 
             $table->foreign('user_id')
                   ->references('id')

@@ -25,7 +25,8 @@ class ArticleRequest extends Request
     {
         return [
             'title' => ['required', 'min:4'],
-            'body' => ['required', 'min:42']
+            'body' => ['required', 'min:42'],
+            'excerpt' => ['required', 'min:4']
         ];
     }
 }

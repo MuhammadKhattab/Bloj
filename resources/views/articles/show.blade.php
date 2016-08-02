@@ -10,6 +10,14 @@
   </div>
 
   <div class = "row">
+    <div class = "col-md-12">
+      <p>Excerpt: {{ $article -> excerpt }}</p>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class = "row">
     <p class = "col-md-12">
       {{ $article -> body }}
     </p>
@@ -27,7 +35,7 @@
     </div>
   </div>
 
-  <h5>Published at: {{ $article->published_at }}</h5>
+  <h5>Published at: {{ $article->create_at }}</h5>
 
   @include('articles.tags')
 

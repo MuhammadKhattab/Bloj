@@ -19,7 +19,7 @@
     <div class = "col-md-12">
 
       <?php $user = $authors[$article->user_id]; ?>
-      
+
       <h6>Author:
         <a href="{{ url("users",['id' => $user->id]) }}">{{ $user->name }}</a>
       </h6>
@@ -27,7 +27,7 @@
     </div>
   </div>
 
-  <h6>Published at: {{ $article->published_at}}</h6>
+  <h6>Published at: {{ $article->created_at }}</h6>
 
   @include('articles.tags')
 

@@ -5,7 +5,7 @@
       {!! Form::label('title','Title:') !!}
     </div>
    <div class = "col-md-11">
-     {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter a name for the article']) !!}
+     {!! Form::text('title', null, ['class' => 'form-control', 'placeholder' => 'Enter a name for the article', 'required']) !!}
     </div>
   </div>
 
@@ -22,7 +22,7 @@
       {!! Form::label('body','Body:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Write down your content', 'id' => 'article-body']) !!}
+      {!! Form::textarea('body', null, ['class' => 'form-control', 'placeholder' => 'Write down your content', 'required']) !!}
     </div>
   </div>
 
@@ -39,7 +39,7 @@
       {!! Form::label('excerpt','Excerpt:') !!}
     </div>
     <div class = "col-md-11">
-      {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article']) !!}
+      {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article', 'required']) !!}
     </div>
   </div>
 

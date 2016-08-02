@@ -63,11 +63,16 @@ class AuthController extends Controller
      */
     protected function create(array $data)
     {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'role' => 'Author'
-        ]);
+      $user = User::create([
+          'name' => $data['name'],
+          'email' => $data['email'],
+          'password' => bcrypt($data['password'])
+      ]);
+
+      // IDK why create or update won't solve this
+      $user -> role = 'Author';
+      $user->save();
+
+      return $user;
     }
 }
