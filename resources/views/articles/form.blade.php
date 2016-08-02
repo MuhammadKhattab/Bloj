@@ -26,10 +26,10 @@
     </div>
   </div>
 
-  @if ($errors->has('title'))
+  @if ($errors->has('body'))
     <div class="row">
       <span class="col-md-3 col-md-offset-1">
-        <h6 class="alert alert-danger">{{ $errors->first('title') }}</h6>
+        <h6 class="alert alert-danger">{{ $errors->first('body') }}</h6>
       </span>
     </div>
   @endif

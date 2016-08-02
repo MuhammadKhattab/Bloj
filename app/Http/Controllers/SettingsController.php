@@ -26,6 +26,9 @@ class SettingsController extends Controller
     public function updateName(Request $request) {
       $user = Auth::user();
       $user->update(['name'=>$request->name]);
+
+      flash()->success('Your name has been updated successfully, Mr. Bond!');
+
       return app('App\Http\Controllers\UsersController')->show($user->id);
     }
 
@@ -33,6 +36,9 @@ class SettingsController extends Controller
       $user =  Auth::user();
       if (Hash::check($request->oldPassword, $user->password)) {
         $user->update(['password' => bcrypt($request->newPassword)]);
+
+        flash()->success('Your password has been updated successfully!');
+
         return app('App\Http\Controllers\UsersController')->show($user->id);
       }
       return $this->index();

@@ -12,6 +12,11 @@ use Auth;
 
 class UsersController extends Controller
 {
+
+  public function __construct() {
+    $this->middleware('auth', ['except', 'show']);
+  }
+
   public function show($id) {
     $user = User::findOrFail($id);
 
@@ -23,9 +28,26 @@ class UsersController extends Controller
   }
 
   public function profile() {
-    if(Auth::check()){
-      return $this-> show(Auth::user()->id);
+    return $this -> show(Auth::user()->id);
+  }
+
+  public function admin() {
+    if(strcmp(Auth::user()->role, 'Admin') === 0) {
+
+      $users = User::all();
+
+      return view('users.admin', compact('users'));
     }
+    return redirect('/');
+  }
+
+  public function destroy($id) {
+    $user = User::findOrFail($id);
+
+    if(strcmp(Auth::user()->role, 'Admin') === 0 || Auth::user()->id === $user->id) {
+        $user->delete();
+    }
+    return redirect('admin');
   }
 
 }

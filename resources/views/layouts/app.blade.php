@@ -82,6 +82,9 @@
 
                             <ul class="dropdown-menu" role="menu">
                               <li><a href="{{ url('/profile') }}"><i class="fa fa-user" aria-hidden="true"></i>Profile</a></li>
+                              @if(strcmp(Auth::user()->role,'Admin') === 0)
+                                <li><a href="{{ url('/admin') }}"><i class="fa fa-key" aria-hidden="true"></i>Admin</a></li>
+                              @endif
                               <li><a href="{{ url('/settings') }}"><i class="fa fa-cog" aria-hidden="true"></i>Settings</a></li>
                               <li><a href="{{ url('/logout') }}"><i class="fa fa-btn fa-sign-out"></i>Logout</a></li>
                             </ul>

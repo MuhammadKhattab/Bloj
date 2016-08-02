@@ -18,7 +18,7 @@ class ArticlesController extends Controller
 {
 
     public function __construct() {
-      $this->middleware('auth',['only'=>['create', 'edit', 'destroy', 'store', 'update']]);
+      $this->middleware('auth',['except'=>['show', 'index']]);
     }
 
     public function index() {

@@ -10,6 +10,11 @@ use App\Tag;
 
 class TagsController extends Controller
 {
+
+    public function __construct() {
+        $this->middleware('auth',['only', 'destroy']);
+    }
+
     public function index() {
       $tags = Tag::all();
 
@@ -22,5 +27,11 @@ class TagsController extends Controller
       $articles = $tag -> articles;
 
       return view('tags.show', compact('articles', 'tag'));
+    }
+
+    public function destroy($id) {
+      Tag::findOrFail($id)->delete();
+
+      return redirect('admin');
     }
 }

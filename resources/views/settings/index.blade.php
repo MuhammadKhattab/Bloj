@@ -16,7 +16,7 @@
         </div>
 
         <div class="form-group">
-            <div class="col-sm-offset-1 col-sm-2">
+            <div class="col-sm-offset-2 col-sm-2">
               {!! Form::submit('Edit the name',['class' => 'btn-danger form-control']) !!}
           </div>
         </div>
@@ -47,6 +47,14 @@
         </div>
       </div>
 
+      @if ($errors->has('newPassword'))
+        <div class="row">
+          <span class="col-md-4 col-md-offset-2">
+            <h6 class="alert alert-danger">{{ $errors->first('newPassword') }}</h6>
+          </span>
+        </div>
+      @endif
+
       <div class="form-group">
         <div class = "control-label col-md-2">
           {!! Form::label('newPassword_confirmation','Confirm new password:') !!}
@@ -57,15 +65,13 @@
       </div>
 
       <div class="form-group">
-          <div class="col-sm-offset-1 col-sm-2">
+          <div class="col-sm-offset-2 col-sm-2">
             {!! Form::submit('Change password',['class' => 'btn-danger form-control']) !!}
         </div>
       </div>
 
     </div>
     {!! Form::close() !!}
-
-    @include('errors.list')
 
   </div>
 @endsection
