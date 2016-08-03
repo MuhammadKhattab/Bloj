@@ -3,21 +3,13 @@
 @section('content')
   <div class = "container">
 
-    <h4>Wanna see a magic trick?</h4>
-    <p>Hit the hat the the magic wand...</p>
-    <div class = "row">
+    <div id="about">
 
-      <div class = "col-md-3">
-        <div id="draggable" class="ui-widget-content">
-          <img src= {{ url("img/wand.png")}} alt="paper">
-        </div>
-      </div>
-
-      <div class = "col-md-3">
-        <div id="droppable-explore" class="ui-widget-header">
-          <img src= {{ url("img/hat.png")}} alt="paper">
-        </div>
-      </div>
+      <h3>About us</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        <br>We make kool stuff...
+      </p>
 
     </div>
 

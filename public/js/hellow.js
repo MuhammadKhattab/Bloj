@@ -32,9 +32,9 @@ $(document).ready( function() {
   $( function() {
     $( "#draggable" ).draggable();
 
-    $( "#droppable-explore" ).droppable({
+    $( "#droppable-magic" ).droppable({
       drop: function( event, ui ) {
-        window.location.href = "http://localhost:8000/magic";
+        window.location.href = "http://localhost:8000";
       }
     });
   } );

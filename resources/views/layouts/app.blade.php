@@ -43,7 +43,7 @@
 
               {!! Form::open(['method'=>'GET','url'=>'search','role'=>'search']) !!}
                 <div class="col-sm-4 col-md-offset-1">
-                  <div class="input-group mi-input-group">
+                  <div class="input-group search-input-group">
                     {!! Form::text('search',null,  ['class' => 'form-control', 'placeholder'=>'search', 'required']) !!}
                       <span class="input-group-addon">
                           <button type="submit">
@@ -124,6 +124,7 @@
       </div>
     </div>
 
+  </div>
 </footer>
 
 <!-- JavaScripts -->

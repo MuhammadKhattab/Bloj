@@ -16,7 +16,7 @@ class TagsController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth',['except', 'show', 'index']);
+      $this->middleware('auth',['except'=>['show', 'index']]);
     }
 
 
@@ -49,11 +49,13 @@ class TagsController extends Controller
 
 
     public function update($id, UpdateTagRequest $request) {
-      $tag = Tag::findOrFail($id);
-      $tag->update(['name' => $request->name]);
+      if(strcmp(Auth::user()->role,'Admin')===0) {
+        $tag = Tag::findOrFail($id);
 
-      flash()->success('Tag name has been updated successfully!');
+        $tag->update(['name' => $request->name]);
 
+        flash()->success('Tag name has been updated successfully!');
+      }
       return redirect('admin');
     }
 

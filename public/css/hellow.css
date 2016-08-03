@@ -1,27 +1,24 @@
 body {
     font-family: 'Lato';
-    background-color: #e6f3ff;
+    background-color: #eaeae1;
     height: 100%;
     padding-top: 80px;
     padding-bottom: 50px;
 }
 
+
 .fa {
   margin-right: 4px;
 }
 
-p {
-  margin-left: 10px;
-}
-
-.mi-input-group {
+.search-input-group {
     margin-top: 7px;
 }
 
-.mi-input-group .input-group-addon{
+.search-input-group .input-group-addon{
     background: white !important;
 }
-.mi-input-group button{
+.search-input-group button{
     border:0;
     background:transparent;
 }
@@ -39,11 +36,7 @@ p {
   color: #1e3044;
 }
 
-.btn {
-  margin-bottom: 15px;
-}
-
- hr {
+hr {
    border: 0;
    height: 1px;
    background-image: linear-gradient(to right, rgba(102, 0, 102, 0), rgba(102, 0, 102, 0.75), rgba(102, 0, 102, 0));
@@ -57,7 +50,7 @@ p {
     border: none;
    }
 
- #droppable-explore, #droppable-submit {
+ #droppable-magic, #droppable-submit {
     z-index: 9;
     padding: 0.5em; float: left; margin: 10px;
     background-color: transparent;
@@ -65,28 +58,55 @@ p {
   }
 
 /*welcome*/
-.welcome-btns {
+#welcome {
+  padding-top: 10px;
+  background-color: #333333;
 }
 
-.welcome-btn {
+#welcome-footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#welcome-footer > a {
+  color: white;
+}
+
+#welcome-footer > a:hover {
+  color: #b2cde6;
+}
+
+#welcome-btn {
   font-size: 16px;
 }
 
-.welcome-text {
+#welcome-head {
+  font-size: 64px;
   color: white;
   text-align: center;
 }
 
-  @media (max-width: 991px) {
-    .welcome-text {
-      color: #333333;
-    }
+#welcome-text {
+  font-size: 16px;
+  color: white;
+  text-align: center;
+}
 
-    #welcome-img {
-      height: 0;
-      width: 0;
-    }
+.btn-outline-secondary {
+  color:white;
+}
+
+/*other devices*/
+@media (max-width: 991px) {
+  #welcome {
+    background-color: #333333;
   }
+
+  #welcome-img {
+    height: 0;
+    width: 0;
+  }
+}
 
 /* Large desktops and laptops */
 @media (min-width: 992px) {

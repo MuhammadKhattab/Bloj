@@ -12,45 +12,75 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700">
 
       <!-- Styles -->
-      <link href={{ url("css/libs/bootstrap.min.css")}} rel="stylesheet">
-
+      <link rel="stylesheet" href=" {{ url('css/libs/bootstrap4.min.css') }}">
+      <link href={{ url("css/libs/select2.min.css")}} rel="stylesheet" />
+      <link href={{ url("css/libs/jquery-ui.css")}} rel="stylesheet">
       <link href={{ url("css/hellow.css")}} rel="stylesheet">
-
       <!-- shortcut icon -->
       <link rel="shortcut icon" href="{{ url('img/title.png') }}">
 
   </head>
 
-  <body>
+  <body id = "welcome">
 
-    <img id = "welcome-img" src="img/welcome.jpg" alt="welcome">
+    <img src="{{ url('img/welcome.jpg') }}" alt="welcome" id = "welcome-img">
 
     <div class="container">
 
-      <div class = "row">
-        <!-- display classes are not working -->
-        <h1 class = "display-1 col-md-2 col-md-offset-4 welcome-text">Bloj</h1>
+      <div class="row">
+        <div class="offset-md-9">
+          <div class="container">
+            <a href="{{ url('login') }}" class="btn btn-outline-secondary">Log in</a>
+            <a href="{{ url('register') }}" class="btn btn-outline-secondary">Sign up</a>
+          </div>
+        </div>
       </div>
 
-      <div class = "row">
-        <h4 class = "display-3 col-md-10 welcome-text">Say Hellow to the new articles... </h4>
+      <div class="row">
+        <div class="col-md-12">
+          <h1 id = "welcome-head">Bloj</h1>
+        </div>
       </div>
 
-      <div class="welcome-btns">
+      <div class="row">
+        <div class="col-md-12">
+          <h6 id= "welcome-text">Someone... somewhere... in this universie...</h6>
+        </div>
+      </div>
 
-        <div class="row">
-            <a href="{{ url('/articles') }}"><button type="button" class="col-md-2 col-md-offset-4 btn btn-primary welcome-btn">Explore</button></a>
+      <div class="row">
+        <div class="col-md-12">
+          <h6 id= "welcome-text">is writing... something... somehow...</h6>
         </div>
+      </div>
+
+      <div class="container">
         <div class="row">
-            <a href="{{ url('/login') }}"><button type="button" class="col-md-2 col-md-offset-4 btn btn-primary welcome-btn">Login</button></a>
+          <div>
+            <a href="{{ url('articles') }}" class="col-md-4 offset-md-4 btn btn-lg btn-outline-secondary">Explore</a>
+          </div>
         </div>
-        <div class="row">
-            <a href="{{ url('/register') }}"><button type="button" class="col-md-2 col-md-offset-4 btn btn-primary  welcome-btn">Register</button></a>
-        </div>
+      </div>
 
     </div>
+   </body>
 
-  </div>
- </body>
+   <footer>
+     <div class="container">
+       <div id = "welcome-footer">
+         <a href="{{ url('about') }}" class="btn btn-link">About</a>
+         <a href="{{ url('contact') }}" class="btn btn-link">Contact us</a>
+       </div>
+     </div>
+   </footer>
+
+
+   <!-- JavaScripts -->
+   <script src={{ url("js/libs/jquery.min.js")}}></script>
+   <script src={{ url("js/libs/bootstrap.min.js")}}></script>
+   <script src={{ url("js/libs/select2.min.js")}}></script>
+   <script src={{ url("js/libs/jquery-ui.js")}}></script>
+   <script src={{ url("js/libs/jquery-ui-punch.min.js")}}></script>
+   <script src={{ url("js/hellow.js")}}></script>
 
 </html>
