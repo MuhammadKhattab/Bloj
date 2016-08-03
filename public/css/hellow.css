@@ -39,7 +39,7 @@ body {
 hr {
    border: 0;
    height: 1px;
-   background-image: linear-gradient(to right, rgba(102, 0, 102, 0), rgba(102, 0, 102, 0.75), rgba(102, 0, 102, 0));
+   background-image: linear-gradient(to right, rgba(38, 38, 38, 0), rgba(38, 38, 38, 0.75), rgba(38, 38, 38, 0));
  }
 
  #draggable {
@@ -61,6 +61,12 @@ hr {
 #welcome {
   padding-top: 10px;
   background-color: #333333;
+}
+
+#welcome-card {
+  /*background-color: rgba(217, 230, 242, .5);*/
+  background-color: rgba(0, 0, 0, .5);
+  color: white;
 }
 
 #welcome-footer {
@@ -94,6 +100,10 @@ hr {
 
 .btn-outline-secondary {
   color:white;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #333333;
 }
 
 /*other devices*/

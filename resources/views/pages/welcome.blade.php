@@ -63,16 +63,45 @@
       </div>
 
     </div>
-   </body>
 
-   <footer>
-     <div class="container">
-       <div id = "welcome-footer">
-         <a href="{{ url('about') }}" class="btn btn-link">About</a>
-         <a href="{{ url('contact') }}" class="btn btn-link">Contact us</a>
-       </div>
+    <hr>
+
+    <div class="container">
+      <div class="row">
+
+        <div class="col-sm-4">
+          <div class="card card-block" id = "welcome-card">
+            <h4 class="card-title">Magic</h4>
+            <p class="card-text">We have magic tricks...</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card card-block" id = "welcome-card">
+            <h4 class="card-title">Articles</h4>
+            <p class="card-text">We had some of those...</p>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card card-block" id = "welcome-card">
+            <h4 class="card-title">Health</h4>
+            <p class="card-text">I like carrots...</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </body>
+
+  <footer>
+   <div class="container">
+     <div id = "welcome-footer">
+       <a href="{{ url('about') }}" class="btn btn-link">About</a>
+       <a href="{{ url('contact') }}" class="btn btn-link">Contact us</a>
      </div>
-   </footer>
+   </div>
+  </footer>
 
 
    <!-- JavaScripts -->
