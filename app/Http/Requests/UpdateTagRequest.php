@@ -15,7 +15,7 @@ class UpdateTagRequest extends Request
      */
     public function authorize()
     {
-        return strcmp(Auth::user()->role, 'Admin')===0;
+        return true;
     }
 
     /**

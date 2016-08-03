@@ -10,11 +10,13 @@ use App\Tag;
 
 use App\Http\Requests\UpdateTagRequest;
 
+use Auth;
+
 class TagsController extends Controller
 {
 
     public function __construct() {
-        $this->middleware('auth',['only', 'destroy']);
+        $this->middleware('auth',['except', 'show', 'index']);
     }
 
 
@@ -56,10 +58,11 @@ class TagsController extends Controller
     }
 
     public function destroy($id) {
-      Tag::findOrFail($id)->delete();
+      if(strcmp(Auth::user()->role,'Admin')===0) {
+        Tag::findOrFail($id)->delete();
 
-      flash()->success('Tag has been deleted successfully!');
-
+        flash()->success('Tag has been deleted successfully!');
+      }
       return redirect('admin');
     }
 
