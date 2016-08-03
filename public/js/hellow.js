@@ -9,13 +9,6 @@ $(document).ready( function() {
 
   /*
   |--------------------------------------------------------------------------
-  | contact animation
-  |--------------------------------------------------------------------------
-  */
-  $('.anim-text').animate({marginLeft: "20px"}, 1500);
-
-  /*
-  |--------------------------------------------------------------------------
   | tags in form
   |--------------------------------------------------------------------------
   */
@@ -34,7 +27,7 @@ $(document).ready( function() {
 
     $( "#droppable-magic" ).droppable({
       drop: function( event, ui ) {
-        window.location.href = "http://localhost:8000";
+        window.location.href = "http://localhost:8000/search?search=magic+trick";
       }
     });
   } );

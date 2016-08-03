@@ -1,9 +1,10 @@
 body {
     font-family: 'Lato';
-    background-color: #eaeae1;
+    background-color: #1f3f60;
     height: 100%;
     padding-top: 80px;
     padding-bottom: 50px;
+    color: white;
 }
 
 
@@ -23,7 +24,20 @@ body {
     background:transparent;
 }
 
-/*tags*/
+/*
+|--------------------------------------------------------------------------
+| about, contact, magic jumbotron
+|--------------------------------------------------------------------------
+*/
+#about-jumbotron {
+  background-color: #13263a;
+}
+
+/*
+|--------------------------------------------------------------------------
+| tags
+|--------------------------------------------------------------------------
+*/
 .tag-box {
   margin: 1px 0px 1px 4px ;
   border-radius: 3px;
@@ -39,7 +53,7 @@ body {
 hr {
    border: 0;
    height: 1px;
-   background-image: linear-gradient(to right, rgba(38, 38, 38, 0), rgba(38, 38, 38, 0.75), rgba(38, 38, 38, 0));
+   background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0));
  }
 
  #draggable {
@@ -57,14 +71,17 @@ hr {
     border: none;
   }
 
-/*welcome*/
+/*
+|--------------------------------------------------------------------------
+| welcome page
+|--------------------------------------------------------------------------
+*/
 #welcome {
   padding-top: 10px;
   background-color: #333333;
 }
 
 #welcome-card {
-  /*background-color: rgba(217, 230, 242, .5);*/
   background-color: rgba(0, 0, 0, .5);
   color: white;
 }
@@ -118,7 +135,11 @@ hr {
   }
 }
 
-/* Large desktops and laptops */
+/*
+|--------------------------------------------------------------------------
+| Large desktops and laptops
+|--------------------------------------------------------------------------
+*/
 @media (min-width: 992px) {
 
     #welcome-img {
@@ -136,12 +157,20 @@ hr {
 
 }
 
-/*articles.index*/
+/*
+|--------------------------------------------------------------------------
+| articles.index
+|--------------------------------------------------------------------------
+*/
 article {
   font-size: 20px;
 }
 
-/*login, register panel*/
+/*
+|--------------------------------------------------------------------------
+| panels
+|--------------------------------------------------------------------------
+*/
 .panel-default > .panel-heading {
   background-color: #ce4b4b;
   color: #ffe6e6;
@@ -160,7 +189,11 @@ article {
   color:#cccccc;
 }
 
-/*navbar*/
+/*
+|--------------------------------------------------------------------------
+| navbar
+|--------------------------------------------------------------------------
+*/
 .navbar-default {
   background-color: #ce4b4b;
   border-color: #e16558;

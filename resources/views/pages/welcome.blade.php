@@ -30,8 +30,8 @@
       <div class="row">
         <div class="offset-md-9">
           <div class="container">
-            <a href="{{ url('login') }}" class="btn btn-outline-secondary">Log in</a>
-            <a href="{{ url('register') }}" class="btn btn-outline-secondary">Sign up</a>
+            <a href="login" class="btn btn-outline-secondary">Log in</a>
+            <a href="register" class="btn btn-outline-secondary">Sign up</a>
           </div>
         </div>
       </div>
@@ -57,7 +57,7 @@
       <div class="container">
         <div class="row">
           <div>
-            <a href="{{ url('articles') }}" class="col-md-4 offset-md-4 btn btn-lg btn-outline-secondary">Explore</a>
+            <a href="articles" class="col-md-4 offset-md-4 btn btn-lg btn-outline-secondary">Explore</a>
           </div>
         </div>
       </div>
@@ -97,8 +97,8 @@
   <footer>
    <div class="container">
      <div id = "welcome-footer">
-       <a href="{{ url('about') }}" class="btn btn-link">About</a>
-       <a href="{{ url('contact') }}" class="btn btn-link">Contact us</a>
+       <a href="about" class="btn btn-link">About</a>
+       <a href="contact" class="btn btn-link">Contact us</a>
      </div>
    </div>
   </footer>
