@@ -40,19 +40,25 @@ class TagsController extends Controller
     public function store(UpdateTagRequest $request) {
       Tag::create($request->all());
 
+      flash()->success('Tag has been created successfully!');
+
       return redirect('admin');
     }
 
 
-    public function update($id, Request $request) {
+    public function update($id, UpdateTagRequest $request) {
       $tag = Tag::findOrFail($id);
       $tag->update(['name' => $request->name]);
+
+      flash()->success('Tag name has been updated successfully!');
 
       return redirect('admin');
     }
 
     public function destroy($id) {
       Tag::findOrFail($id)->delete();
+
+      flash()->success('Tag has been deleted successfully!');
 
       return redirect('admin');
     }

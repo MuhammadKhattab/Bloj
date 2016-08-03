@@ -18,7 +18,7 @@
                   <th>Email</th>
                   <th>Role</th>
                   <th>Artciles #</th>
-                  <th>Tools</th>
+                  <th>Actions</th>
               </tr>
           </thead>
           <tbody>
@@ -29,18 +29,18 @@
                   <td>{{ $user->role }}</td>
                   <td>{{ count($user->articles) }}</td>
                   <td>
-                    <div class = "col-md-1">
-                      {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id]]) !!}
-                        <button type="submit" class="btn btn-danger">
-                          <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
-                      {!! Form::close() !!}
-                    </div>
+                    {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', $user->id]]) !!}
+                      <button type="submit" class="btn btn-danger">
+                        <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
+                    {!! Form::close() !!}
                   </td>
               </tr>
               @endforeach
           </tbody>
       </table>
     @endif
+
+    <hr>
 
     @if (count($tags) === 0)
       <h3>No tags yet... that's even kooler</h3>
@@ -51,7 +51,7 @@
               <tr>
                   <th>Name</th>
                   <th>Artciles #</th>
-                  <th>Tools</th>
+                  <th>Actions</th>
               </tr>
           </thead>
           <tbody>
@@ -60,24 +60,21 @@
                   <td>{{ $tag->name }}</td>
                   <td>{{ count($tag->articles) }}</td>
                   <td>
-                    <div class = "col-md-1">
-                      <button type="submit" class="btn btn-primary" id = "edit-tag-btn-{{ $tag->id }}"><i class="fa fa-pencil" aria-hidden="true"></i>Edit</button>
-                    </div>
-                    <div id="edit-tag-content-{{ $tag->id }}" class="hide">
-                      {!! Form::open(['method' => 'PATCH', 'action' =>['TagsController@update', $tag->id], 'class' => 'form-inline']) !!}
-                        <div class="form-group">
-                          {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter tag name', 'required']) !!}
-                          {!! Form::submit('Submit', ['class' => 'btn-primary form-control']) !!}
+                    {!! Form::model($tag, ['method' => 'PATCH', 'url' => ['tags', $tag->id]]) !!}
+                      <div class="form-group">
+                        <div class="col-md-4">
+                          {!! Form::text('name', null, ['class' => 'form-control col-md-2', 'placeholder' => 'Enter tag...', 'required']) !!}
                         </div>
+                        <div class="col-md-2">
+                          {!! Form::submit('Edit Name', ['class' => 'btn-primary form-control']) !!}
+                        </div>
+                      </div>
                       {!! Form::close() !!}
-                    </div>
 
-                    <div class = "col-md-1 col-md-offset-1">
-                      {!! Form::open(['method' => 'DELETE', 'route' => ['tags.destroy', $tag->id]]) !!}
-                      <button type="submit" class="btn btn-danger">
-                        <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
-                      {!! Form::close() !!}
-                    </div>
+                        {!! Form::open(['method' => 'DELETE', 'route' => ['tags.destroy', $tag->id]]) !!}
+                          <button type="submit" class="btn btn-danger">
+                            <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
+                        {!! Form::close() !!}
                   </td>
               </tr>
               @endforeach
@@ -89,38 +86,19 @@
       <button type="submit" class="btn btn-success" id = "create-tag-btn"><i class="fa fa-plus" aria-hidden="true"></i>New Tag</button>
     </div>
     <div id="create-tag-content" class="hide">
-      {!! Form::open(['url' => 'tags', 'class' => 'form-inline']) !!}
+      {!! Form::open(['url' => 'tags']) !!}
         <div class="form-group">
-          {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter tag name', 'required']) !!}
-          {!! Form::submit('Submit', ['class' => 'btn-success form-control']) !!}
+          <div class="row">
+            <div class="col-md-7">
+              {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter tag...', 'required']) !!}
+            </div>
+            <div class="col-md-5">
+              {!! Form::submit('Create', ['class' => 'btn-success form-control']) !!}
+            </div>
+          </div>
         </div>
       {!! Form::close() !!}
     </div>
 
   </div>
-
-  <!-- create, edit tags -->
-  <script src={{ url("js/libs/jquery.min.js")}}></script>
-  <script>
-    $(document).ready( function() {
-
-      var tags = <?php echo json_encode($tags->lists('id')); ?>;
-      for(var id in tags) {
-        $('#edit-tag-btn-'+tags[id]).popover({
-            html : true,
-            content: function() {
-              return $("#edit-tag-content-"+tags[id]).html();
-            }
-        });
-      }
-
-      $('#create-tag-btn').popover({
-          html : true,
-          content: function() {
-            return $("#create-tag-content").html();
-          }
-      });
-
-    });
-  </script>
 @endsection
