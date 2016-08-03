@@ -8,6 +8,8 @@ use App\Http\Requests;
 
 use App\Tag;
 
+use App\Http\Requests\UpdateTagRequest;
+
 class TagsController extends Controller
 {
 
@@ -33,6 +35,13 @@ class TagsController extends Controller
       return view('tags.show', compact('articles', 'tag'));
     }
 
+
+
+    public function store(UpdateTagRequest $request) {
+      Tag::create($request->all());
+
+      return redirect('admin');
+    }
 
 
     public function update($id, Request $request) {

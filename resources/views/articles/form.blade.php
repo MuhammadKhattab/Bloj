@@ -11,7 +11,7 @@
 
   @if ($errors->has('title'))
     <div class="row">
-      <span class="col-md-3 col-md-offset-1">
+      <span class="col-md-11 col-md-offset-1">
         <h6 class="alert alert-danger">{{ $errors->first('title') }}</h6>
       </span>
     </div>
@@ -28,7 +28,7 @@
 
   @if ($errors->has('body'))
     <div class="row">
-      <span class="col-md-3 col-md-offset-1">
+      <span class="col-md-11 col-md-offset-1">
         <h6 class="alert alert-danger">{{ $errors->first('body') }}</h6>
       </span>
     </div>
@@ -42,6 +42,14 @@
       {!! Form::textarea('excerpt', null, ['class' => 'form-control', 'rows' => '2', 'placeholder' => 'Write an excerpt for the article', 'required']) !!}
     </div>
   </div>
+
+  @if ($errors->has('excerpt'))
+    <div class="row">
+      <span class="col-md-11 col-md-offset-1">
+        <h6 class="alert alert-danger">{{ $errors->first('excerpt') }}</h6>
+      </span>
+    </div>
+  @endif
 
   <div class="form-group">
     <div class = "col-md-1 control-label">

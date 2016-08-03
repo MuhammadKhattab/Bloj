@@ -6,8 +6,8 @@
 
     @if(Auth::check() && $user->id === Auth::user()->id)
       <div class="row">
-        <a href="{{ url('/articles/create') }}"><button type="button" class="col-md-2 btn btn-primary">create a new article</button></a>
-        <a href="{{ url('/settings') }}"><button type="button" class="col-md-2 col-md-offset-1 btn btn-primary">Settings</button></a>
+        <a href="{{ url('/articles/create') }}"><button type="button" class="col-md-2 btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>New article</button></a>
+        <a href="{{ url('/settings') }}"><button type="button" class="col-md-2 col-md-offset-1 btn btn-primary"><i class="fa fa-cog" aria-hidden="true"></i>Settings</button></a>
       </div>
     @endif
 
