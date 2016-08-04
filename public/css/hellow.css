@@ -4,9 +4,24 @@ body {
     height: 100%;
     padding-top: 80px;
     padding-bottom: 50px;
-    color: white;
 }
 
+h1, h2,h3,h4,h5,h6,p, label, th, td{
+  color: white;
+}
+
+.table-hover tbody tr:hover td {
+  background-color: #1a1a1a;
+}
+
+
+a, #login-forgot, a:visited, a:focus, #login-forgot:visited, #login-forgot:focus {
+  color: #e6f7ff;
+}
+
+a:hover, #login-forgot:hover {
+  color: #ffffcc;
+}
 
 .fa {
   margin-right: 4px;
@@ -46,8 +61,8 @@ body {
   border-width: 1px;
   border-color: #31708f;
   color: #1e3044;
-  background-color: #f8fff5;
-  color: #1e3044;
+  background-color: #008040;
+  color: white;
 }
 
 hr {
@@ -179,14 +194,6 @@ article {
 .panel-default > .panel-body {
   background-color: #d35f5f;
   color: #ffe6e6;
-}
-
-#login-forgot:link {
-  color:#f2f2f2;
-}
-
-#login-forgot:visited, #login-forgot:active, #login-forgot:hover {
-  color:#cccccc;
 }
 
 /*

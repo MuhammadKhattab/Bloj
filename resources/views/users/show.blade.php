@@ -2,16 +2,31 @@
 
 @section('content')
   <div class="container">
-    <h3>{{ $user->name }}</h3>
 
-    @if(Auth::check() && $user->id === Auth::user()->id)
-      <div class="row">
-        <a href="{{ url('/articles/create') }}"><button type="button" class="col-md-2 btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>New article</button></a>
-        <a href="{{ url('/settings') }}"><button type="button" class="col-md-2 col-md-offset-1 btn btn-primary"><i class="fa fa-cog" aria-hidden="true"></i>Settings</button></a>
+    <div class="row">
+
+      <div class="col-md-11">
+        <div class="jumbotron" id = "about-jumbotron">
+          <div class="row">
+            <h3>{{ $user->name }}</h3>
+          </div>
+          <div class="row">
+            <h4>Number of articles: <span class="badge">{{ count($articles)}}</span></h4>
+          </div>
+        </div>
       </div>
-    @endif
 
-    <h4>Number of articles: {{ count($articles)}}</h4>
+      @if(Auth::check() && $user->id === Auth::user()->id)
+        <div class="col-md-1">
+          <div class="btn-group-vertical">
+            <a href="{{ url('/articles/create') }}" class="btn btn-success">
+              <i class="fa fa-plus" aria-hidden="true"></i>New article</a>
+            <a href="{{ url('/articles/create') }}" class="btn btn-success">
+              <i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
+          </div>
+        </div>
+      @endif
+    </div>
 
   @if (count($articles) > 0)
     @include('articles.articles')
