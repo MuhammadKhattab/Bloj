@@ -9,7 +9,7 @@
           <p>
             Articles... Articles everywhere... and if you don't see any... it's OK... it's not your fault...
           </p>
-          <a href="{{ url('/articles/create') }}" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>Fix it</a>
+          <a href="{{ url('/articles/create') }}" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>Create</a>
       </div>
     </div>
 
