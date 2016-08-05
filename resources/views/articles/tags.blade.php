@@ -1,11 +1,9 @@
-@if($article->tags->isEmpty())
-  <h6>No tags</h6>
-@else
-  <h6>Tags:</h6>
+@if(!$article->tags->isEmpty())
+  <h6 class="lead">Tags:</h6>
 
   <p class = "row">
     @foreach($article->tags as $tag)
-      <a href="{{ url("tags",['id' => $tag->id]) }}" class = "col-md-2 col-sm-3 col-xs-3 tag-box">{{ $tag->name }}</a>
+      <a href="{{ url("tags",['id' => $tag->id]) }}" class = "label label-success">{{ $tag->name }}</a>
     @endforeach
 
   </p>

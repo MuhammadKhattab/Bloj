@@ -6,7 +6,11 @@ body {
     padding-bottom: 50px;
 }
 
-h1, h2,h3,h4,h5,h6,p, label, th, td{
+.row {
+  margin-bottom: 5px;
+}
+
+h1, h2, h3, h4, h5, h6, p, label, th, td{
   color: white;
 }
 
@@ -46,23 +50,6 @@ a:hover, #login-forgot:hover {
 */
 #about-jumbotron {
   background-color: #13263a;
-}
-
-/*
-|--------------------------------------------------------------------------
-| tags
-|--------------------------------------------------------------------------
-*/
-.tag-box {
-  margin: 1px 0px 1px 4px ;
-  border-radius: 3px;
-  text-align: center;
-  border: solid;
-  border-width: 1px;
-  border-color: #31708f;
-  color: #1e3044;
-  background-color: #008040;
-  color: white;
 }
 
 hr {
@@ -170,15 +157,6 @@ hr {
       overflow: auto;
     }
 
-}
-
-/*
-|--------------------------------------------------------------------------
-| articles.index
-|--------------------------------------------------------------------------
-*/
-article {
-  font-size: 20px;
 }
 
 /*

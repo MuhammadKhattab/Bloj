@@ -3,10 +3,9 @@
 @section('content')
 <div class = "container">
 
+  <div class="jumbotron" id = "about-jumbotron">
   <div class = "row">
-    <div class = "col-md-11">
-      <h3> {{ $article->title }}</h3>
-    </div>
+      <h1 class="col-md-11 lead" style="color:white;"> {{ $article->title }}</h1>
 
     @if(Auth::check() && $article->user_id === Auth::user()->id)
       <div class="col-md-1">
@@ -26,14 +25,6 @@
   </div>
 
   <div class = "row">
-    <div class = "col-md-12">
-      <p>Excerpt: {{ $article -> excerpt }}</p>
-    </div>
-  </div>
-
-  <hr>
-
-  <div class = "row">
     <p class = "col-md-12">
       {{ $article -> body }}
     </p>
@@ -42,18 +33,19 @@
   <hr>
 
   <div class = "row">
-    <div class = "col-md-12">
-      <h5>Author:
-        <a href="{{ url("users",['id' => $user->id]) }}">
-          {{ $user->name }}
-        </a>
-      </h5>
-    </div>
+      <h4 class="col-md-6 lead">
+        Author: <a href="{{ url("users",['id' => $user->id]) }}">{{ $user->name }}</a>
+      </h4>
+      <h4 class="col-md-6 lead">Published at: {{ $article->created_at }}</h4>
   </div>
 
-  <h5>Published at: {{ $article->create_at }}</h5>
+  <div class = "row">
+      <p class="col-md-12">Excerpt: {{ $article -> excerpt }}</p>
+  </div>
 
   @include('articles.tags')
+
+</div>
 
 </div>
 @endsection

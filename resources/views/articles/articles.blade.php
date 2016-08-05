@@ -1,36 +1,28 @@
 @foreach ($articles as $article)
+<div class="jumbotron" id = "about-jumbotron">
   <div class = "row">
-    <div class="col-md-12">
-        <article>
-          <a href = {{ url('articles', $article->id)}}>  {{$article->title}} </a>
-        </article>
-    </div>
+    <h1 class="col-md-12 lead">
+      <a href = {{ url('articles', $article->id)}}>{{ $article->title }}</a>
+    </h1>
   </div>
 
-  @if($article->excerpt != null)
-  <div class = "row">
-    <div class = "col-md-12">
-      <p>Excerpt: {{ $article -> excerpt }} </p>
-    </div>
-  </div>
-  @endif
+  <?php $user = $authors[$article->user_id]; ?>
 
   <div class = "row">
-    <div class = "col-md-12">
-
-      <?php $user = $authors[$article->user_id]; ?>
-
-      <h6>Author:
+      <h6 class="col-md-6 lead">Author:
         <a href="{{ url("users",['id' => $user->id]) }}">{{ $user->name }}</a>
       </h6>
 
+      <h6 class="col-md-6 lead">Published at: {{ $article->created_at }}</h6>
+  </div>
+
+  <div class = "row">
+    <div class = "col-md-12">
+      <p class="lead">Excerpt: {{ $article -> excerpt }} </p>
     </div>
   </div>
 
-  <h6>Published at: {{ $article->created_at }}</h6>
-
   @include('articles.tags')
 
-  <hr>
-
+</div>
 @endforeach
