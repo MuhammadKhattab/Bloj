@@ -73,5 +73,12 @@
     </div>
     {!! Form::close() !!}
 
+    <hr>
+
+    {!! Form::open(['method' => 'DELETE', 'route' => ['users.destroy', Auth::user()->id]]) !!}
+      <button type="submit" class="btn btn-danger col-md-2">
+        <i class="fa fa-trash-o" aria-hidden="true"></i>Delete my account</button>
+    {!! Form::close() !!}
+
   </div>
 @endsection

@@ -24,9 +24,9 @@ class ArticleRequest extends Request
     public function rules()
     {
         return [
-            'title' => ['required', 'min:4'],
+            'title' => ['required', 'min:3', 'max:128'],
             'body' => ['required', 'min:42'],
-            'excerpt' => ['required', 'min:4']
+            'excerpt' => ['required', 'min:3', 'max:250']
         ];
     }
 }

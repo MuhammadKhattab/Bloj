@@ -29,7 +29,7 @@ class SettingsController extends Controller
 
       flash()->success('Your name has been updated successfully!');
 
-      return app('App\Http\Controllers\UsersController')->show($user->id);
+      return redirect('profile');
     }
 
     public function updatePassword(UpdatePasswordRequest $request) {
@@ -39,7 +39,7 @@ class SettingsController extends Controller
 
         flash()->success('Your password has been updated successfully!');
 
-        return app('App\Http\Controllers\UsersController')->show($user->id);
+        return redirect('profile');
       }
       return $this->index();
     }

@@ -18,7 +18,7 @@ class UpdatePasswordRequest extends Request
 
     /**
      * Get the validation rules that apply to the request.
-     *
+     * password should contain at least one uppercase/lowercase letters and one number
      * @return array
      */
     public function rules()
@@ -27,7 +27,6 @@ class UpdatePasswordRequest extends Request
           'oldPassword' => ['required'],
           'newPassword'   => ['required','min:6','confirmed',
           'regex:/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).+$/']
-          // Contain at least one uppercase/lowercase letters and one number
         ];
     }
 }
