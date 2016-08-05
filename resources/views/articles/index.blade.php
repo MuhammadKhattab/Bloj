@@ -3,20 +3,17 @@
 @section('content')
   <div class = "container">
 
-  <div class = "row">
-      <div class="col-md-12">
-        <h2>Articles</h2>
+    <div class="jumbotron" id = "about-jumbotron">
+      <div class = "row">
+          <h1 class="lead" style="color:white;">Articles</h1>
+          <p>
+            Articles... Articles everywhere... and if you don't see any... it's OK... it's not your fault...
+          </p>
+          <a href="{{ url('/articles/create') }}" class="btn btn-success"><i class="fa fa-plus" aria-hidden="true"></i>Fix it</a>
       </div>
-  </div>
+    </div>
 
 
-  <div class = "row">
-      <div class = "col-md-12">
-        <h4>Wanna <a href="{{ url('/articles/create') }}">create</a> a new article?</h4>
-      </div>
-  </div>
-
-    <hr>
 
     @include('articles.articles')
 

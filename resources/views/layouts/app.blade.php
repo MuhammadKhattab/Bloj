@@ -67,6 +67,7 @@
                       <li role="separator" class="divider"></li>
                       <li><a href="{{ url('/about') }}">About</a></li>
                       <li><a href="{{ url('/contact') }}">Contact us</a></li>
+                      <li><a href="{{ url('/magic') }}">Magic</a></li>
                     </ul>
                   </li>
 

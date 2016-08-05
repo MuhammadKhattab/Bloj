@@ -75,12 +75,14 @@
             <p class="card-text">We have magic tricks...</p>
           </div>
         </div>
+
         <div class="col-sm-4">
           <div class="card card-block" id = "welcome-card">
             <h4 class="card-title">Articles</h4>
             <p class="card-text">We had some of those...</p>
           </div>
         </div>
+
         <div class="col-sm-4">
           <div class="card card-block" id = "welcome-card">
             <h4 class="card-title">Health</h4>

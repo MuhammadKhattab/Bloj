@@ -63,16 +63,16 @@
                     {!! Form::model($tag, ['method' => 'PATCH', 'url' => ['tags', $tag->id]]) !!}
                       <div class="form-group">
                         <div class="col-md-4">
-                          {!! Form::text('name', null, ['class' => 'form-control col-md-2', 'placeholder' => 'Enter tag...', 'required']) !!}
+                          {!! Form::text('name', null, ['class' => 'form-control', 'placeholder' => 'Enter tag...', 'required']) !!}
                         </div>
                         <div class="col-md-2">
-                          {!! Form::submit('Edit Name', ['class' => 'btn-primary form-control']) !!}
+                          {!! Form::submit('Edit', ['class' => 'btn-primary form-control']) !!}
                         </div>
                       </div>
                       {!! Form::close() !!}
 
                         {!! Form::open(['method' => 'DELETE', 'route' => ['tags.destroy', $tag->id]]) !!}
-                          <button type="submit" class="btn btn-danger">
+                          <button type="submit" class="btn btn-danger col-md-2">
                             <i class="fa fa-trash-o" aria-hidden="true"></i>Delete</button>
                         {!! Form::close() !!}
                   </td>

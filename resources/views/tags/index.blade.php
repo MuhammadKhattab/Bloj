@@ -4,7 +4,7 @@
   <div class="container">
 
     <div class="row">
-      <h4 class = "col-md-12">Tags:</h4>
+      <h4 class = "col-md-12">Total number of tags: <span class="badge">{{ count($tags) }}</span></h4>
     </div>
     @foreach($tags as $tag)
     <a href="{{ url("tags",['id' => $tag->id]) }}" class = "btn btn-success col-md-4">

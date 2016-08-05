@@ -21,7 +21,7 @@
           <div class="btn-group-vertical">
             <a href="{{ url('/articles/create') }}" class="btn btn-success">
               <i class="fa fa-plus" aria-hidden="true"></i>New article</a>
-            <a href="{{ url('/articles/create') }}" class="btn btn-success">
+            <a href="{{ url('/settings') }}" class="btn btn-success">
               <i class="fa fa-cog" aria-hidden="true"></i>Settings</a>
           </div>
         </div>
