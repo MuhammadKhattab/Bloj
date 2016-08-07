@@ -5,10 +5,7 @@
 
     <h3>Tag: {{ $tag->name }}</h3>
 
-    @if(count($articles) === 0)
-      <h4>No articles have this tag</h4>
-    @else
-      @include('articles.articlesSimple')
-    @endif
+    @include('pages.articles_simple')
+
   </div>
 @endsection
